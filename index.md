@@ -1,5 +1,3 @@
-# sail or code
-
 Website is under development.
 
  - [Instagram](https://www.instagram.com/anlach)
