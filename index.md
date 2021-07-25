@@ -1,1 +1,7 @@
-# Testing website!
+# sail or code
+
+Website is under development.
+
+ - (Instagram)[https://www.instagram.com/anlach]
+ - (Garmin tracking site)[https://share.garmin.com/anlach]
+
