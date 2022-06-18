@@ -36,16 +36,13 @@ body {
         var(--gradient-color1) 10%
     ); */
 }
-.sail div {
-    top: 40%;
-    left: 20%;
+.sail .textbox {
+    bottom: 18%;
+    left: 10%;
     position: absolute;
 }
-.sail .textbox {
-    height: 122px;
-}
 .sail h1 {
-    color: rgb(109, 155, 255);
+    color: rgb(70, 113, 207);
     text-shadow: 0 0 30px white;
 }
 
@@ -60,15 +57,18 @@ body {
         var(--gradient-color2) 10%
     ); */
 }
-.code div {
-    top: 18%;
-    left: 40%;
-    position: absolute;
-}
 .code .textbox {
-    height: 122px;
+    top: 18%;
+    right: 10%;
+    position: absolute;
 }
 .code h1 {
     color: rgb(67, 226, 19);
     text-shadow: 0 0 30px rgb(67, 226, 19);
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 60px;
+    }
 }
