@@ -16,11 +16,7 @@ html {
     font-size: 20px;
 }
 h1 {
-    font-size: 100px;
-}
-
-body {
-    background-color: ;
+    font-size: 4rem;
 }
 
 .sail {
@@ -30,11 +26,6 @@ body {
     background-image: url("./IMG_4543.JPG");
     background-position: center;
     background-size: cover;
-    /* background: linear-gradient(
-        to top,
-        var(--mid-color1-color2),
-        var(--gradient-color1) 10%
-    ); */
 }
 .sail .textbox {
     bottom: 20%;
@@ -51,11 +42,6 @@ body {
     height: 50vh;
     position: relative;
     background-color: var(--gradient-color2);
-    /* background: linear-gradient(
-        to bottom,
-        var(--mid-color1-color2),
-        var(--gradient-color2) 10%
-    ); */
 }
 .code .textbox {
     top: 20%;
@@ -109,8 +95,8 @@ line {
    } 
 }
 
-@media (max-width: 500px) {
+@media (max-width: 30rem) {
     h1 {
-        font-size: 60px;
+        font-size: 3rem;
     }
 }
