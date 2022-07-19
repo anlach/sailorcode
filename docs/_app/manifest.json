@@ -1,0 +1,81 @@
+{
+  ".svelte-kit/runtime/client/start.js": {
+    "file": "immutable/start-23755a57.js",
+    "src": ".svelte-kit/runtime/client/start.js",
+    "isEntry": true,
+    "imports": [
+      "_index-d34648e9.js"
+    ],
+    "dynamicImports": [
+      ".svelte-kit/runtime/components/layout.svelte",
+      ".svelte-kit/runtime/components/error.svelte",
+      "src/routes/Code.svelte",
+      "src/routes/Sail.svelte",
+      "src/routes/index.svelte"
+    ]
+  },
+  ".svelte-kit/runtime/components/layout.svelte": {
+    "file": "immutable/layout.svelte-2cf0e5f3.js",
+    "src": ".svelte-kit/runtime/components/layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-d34648e9.js"
+    ]
+  },
+  ".svelte-kit/runtime/components/error.svelte": {
+    "file": "immutable/error.svelte-5107e49d.js",
+    "src": ".svelte-kit/runtime/components/error.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-d34648e9.js"
+    ]
+  },
+  "src/routes/Code.svelte": {
+    "file": "immutable/pages/Code.svelte-76e4e7ca.js",
+    "src": "src/routes/Code.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-d34648e9.js"
+    ],
+    "css": [
+      "immutable/assets/Code-f9317da1.css"
+    ]
+  },
+  "src/routes/Sail.svelte": {
+    "file": "immutable/pages/Sail.svelte-d236c59f.js",
+    "src": "src/routes/Sail.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-d34648e9.js"
+    ],
+    "css": [
+      "immutable/assets/Sail-c47f0c94.css"
+    ]
+  },
+  "src/routes/index.svelte": {
+    "file": "immutable/pages/index.svelte-af82067f.js",
+    "src": "src/routes/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-d34648e9.js",
+      "src/routes/Sail.svelte",
+      "src/routes/Code.svelte"
+    ]
+  },
+  "_index-d34648e9.js": {
+    "file": "immutable/chunks/index-d34648e9.js"
+  },
+  "src/routes/Code.css": {
+    "file": "immutable/assets/Code-f9317da1.css",
+    "src": "src/routes/Code.css"
+  },
+  "src/routes/Sail.css": {
+    "file": "immutable/assets/Sail-c47f0c94.css",
+    "src": "src/routes/Sail.css"
+  }
+}
