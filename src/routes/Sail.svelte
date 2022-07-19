@@ -1,5 +1,4 @@
 <script>
-	import './global.css';
 </script>
 
 <div class="sail">
@@ -13,7 +12,7 @@
 		width: 100vw;
 		height: 50vh;
 		position: relative;
-		background-image: url('./img/IMG_4543.JPG');
+		background-image: url('/img/IMG_4543.JPG');
 		background-position: center;
 		background-size: cover;
 	}
