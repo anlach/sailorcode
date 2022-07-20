@@ -1,9 +1,10 @@
 <script>
+	import { blur } from 'svelte/transition';
 </script>
 
 <div class="sail">
 	<div class="textbox">
-		<h1>SAIL</h1>
+		<h1 in:blur>SAIL</h1>
 	</div>
 </div>
 

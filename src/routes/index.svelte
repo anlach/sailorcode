@@ -1,6 +1,9 @@
 <script>
-    import Sail from './Sail.svelte';
-    import Code from './Code.svelte';
+    import Sail from '$lib/Sail.svelte';
+    import Code from '$lib/Code.svelte';
+
+    let sailOpen = false;
+    let codeOpen = false;
 </script>
 
 <Sail />
