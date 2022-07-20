@@ -43,9 +43,7 @@
 		--half-gradient-color2: rgba(4, 26, 16, 0.5);
 	}
 	.code {
-		width: 100vw;
-		height: 50vh;
-		position: relative;
+		height: 100%;
 		background-color: var(--gradient-color2);
 	}
 	.code .textbox {

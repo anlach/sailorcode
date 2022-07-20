@@ -10,8 +10,8 @@
 
 <style>
 	.sail {
-		width: 100vw;
-		height: 50vh;
+		width: 100%;
+		height: 100%;
 		position: relative;
 		background-image: url('/img/IMG_4543.JPG');
 		background-position: center;
