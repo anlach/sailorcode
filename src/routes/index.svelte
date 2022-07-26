@@ -2,39 +2,39 @@
 	import Sail from '$lib/Sail.svelte';
 	import Code from '$lib/Code.svelte';
 
-    let grow = false; 
-    let shrink = false;
+    let growSail = false; 
+    let shrinkSail = false;
 
 
     function sailClick() {
-        if (grow){
-            grow = false;
-        } else if (shrink) {
-            shrink = false;
-            grow = true;
+        if (growSail){
+            growSail = false;
+        } else if (shrinkSail) {
+            shrinkSail = false;
+            growSail = true;
         } else {
-            grow = true;
+            growSail = true;
         }
     }
     function codeClick() {
-        if (grow){
-            shrink = true;
-            grow = false;
-        } else if (shrink) {
-            shrink = false;
+        if (growSail){
+            shrinkSail = true;
+            growSail = false;
+        } else if (shrinkSail) {
+            shrinkSail = false;
         } else {
-            shrink = true;
+            shrinkSail = true;
         }
     }
 </script>
 
 <!-- style:height={height} -->
-<div id="sail-box" class:grow class:shrink
+<div id="sail-box" class:growSail class:shrinkSail
  on:click={sailClick}>
-	<Sail />
+	<Sail grow={growSail} shrink={shrinkSail}/>
 </div>
 <div id="code-box" on:click={codeClick}>
-	<Code />
+	<Code grow={shrinkSail} shrink={growSail}/>
 </div>
 
 <style>
@@ -42,11 +42,11 @@
         height: 50vh;
         transition: height 0.5s;
     }
-    #sail-box.grow {
+    #sail-box.growSail {
         height: 90vh;
         transition: height 0.5s;
     }
-    #sail-box.shrink {
+    #sail-box.shrinkSail {
         height: 10vh;
         transition: height 0.5s;
     }

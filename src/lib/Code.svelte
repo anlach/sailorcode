@@ -1,8 +1,10 @@
 <script>
+	export let shrink;
+	export let grow;
 </script>
 
 <div class="code">
-	<div class="textbox">
+	<div class:shrink class:grow class="textbox">
 		<h1>CODE</h1>
 	</div>
 	<div class="horizon-blur" />
@@ -51,6 +53,12 @@
 		right: 10%;
 		z-index: 1;
 		position: absolute;
+		transition: top 0.5s;
+	}
+	.code .textbox.shrink,
+	.code .textbox.grow {
+		top: 0%;
+		transition: top 0.5s;
 	}
 	.code .horizon-blur {
 		height: 15%;
