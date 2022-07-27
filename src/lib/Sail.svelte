@@ -16,8 +16,14 @@
 		height: 100%;
 		position: relative;
 		background-image: url('/img/IMG_4543.JPG');
-		background-position: center;
-		background-size: cover;
+		background-position: left;
+		background-size: auto 90vh;
+		background-repeat: no-repeat;
+	}
+	@media (min-aspect-ratio: 1.35) {
+		.sail {
+			background-size: 100vw auto;
+		}
 	}
 	.sail .textbox {
 		bottom: 20%;
