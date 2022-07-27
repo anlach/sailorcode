@@ -15,24 +15,32 @@
 		<line class="horizontal" x1="0" y1="0%" x2="100%" y2="0%" />
 		<line class="horizontal" x1="0" y1="0%" x2="100%" y2="0%" />
 		<line class="horizontal" x1="0" y1="0%" x2="100%" y2="0%" />
-		<line class="radial" x1="50%" y1="-3%" x2="0" y2="3%" />
-		<line class="radial" x1="50%" y1="-3%" x2="0" y2="6%" />
-		<line class="radial" x1="50%" y1="-3%" x2="0" y2="10%" />
-		<line class="radial" x1="50%" y1="-3%" x2="0" y2="17%" />
-		<line class="radial" x1="50%" y1="-3%" x2="0" y2="25%" />
-		<line class="radial" x1="50%" y1="-3%" x2="0" y2="35%" />
-		<line class="radial" x1="50%" y1="-3%" x2="0" y2="58%" />
-		<line class="radial" x1="50%" y1="-3%" x2="0" y2="100%" />
-		<line class="radial" x1="50%" y1="-3%" x2="0" y2="290%" />
-		<line class="radial" x1="50%" y1="-3%" x2="100%" y2="3%" />
-		<line class="radial" x1="50%" y1="-3%" x2="100%" y2="6%" />
-		<line class="radial" x1="50%" y1="-3%" x2="100%" y2="10%" />
-		<line class="radial" x1="50%" y1="-3%" x2="100%" y2="17%" />
-		<line class="radial" x1="50%" y1="-3%" x2="100%" y2="25%" />
-		<line class="radial" x1="50%" y1="-3%" x2="100%" y2="35%" />
-		<line class="radial" x1="50%" y1="-3%" x2="100%" y2="58%" />
-		<line class="radial" x1="50%" y1="-3%" x2="100%" y2="100%" />
-		<line class="radial" x1="50%" y1="-3%" x2="100%" y2="290%" />
+		<line class="radial" x1="50%" y1="-10%" x2="0" y2="3%" />
+		<line class="radial" x1="50%" y1="-10%" x2="0" y2="5%" />
+		<line class="radial" x1="50%" y1="-10%" x2="0" y2="8%" />
+		<line class="radial" x1="50%" y1="-10%" x2="0" y2="11%" />
+		<line class="radial" x1="50%" y1="-10%" x2="0" y2="15%" />
+		<line class="radial" x1="50%" y1="-10%" x2="0" y2="20%" />
+		<line class="radial" x1="50%" y1="-10%" x2="0" y2="26%" />
+		<line class="radial" x1="50%" y1="-10%" x2="0" y2="36%" />
+		<line class="radial" x1="50%" y1="-10%" x2="0" y2="50%" />
+		<line class="radial" x1="50%" y1="-10%" x2="0" y2="75%" />
+		<line class="radial" x1="50%" y1="-10%" x2="0" y2="120%" />
+		<line class="radial" x1="50%" y1="-9%" x2="0" y2="230%" />
+		<line class="radial" x1="50%" y1="-8%" x2="0" y2="750%" />
+		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="3%" />
+		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="5%" />
+		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="8%" />
+		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="11%" />
+		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="15%" />
+		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="20%" />
+		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="26%" />
+		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="36%" />
+		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="50%" />
+		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="75%" />
+		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="120%" />
+		<line class="radial" x1="50%" y1="-9%" x2="100%" y2="230%" />
+		<line class="radial" x1="50%" y1="-8%" x2="100%" y2="750%" />
 	</svg>
 </div>
 
