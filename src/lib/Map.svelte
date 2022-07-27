@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
+    import { data } from '$lib/data/sailing-tracks.js';
 
 	function loadMap() {
 		var map = L.map('map').setView([35.000, -77.00], 5);
@@ -8,6 +9,7 @@
 			maxZoom: 19,
 			attribution: '© OpenStreetMap'
 		}).addTo(map);
+        L.geoJSON(data).addTo(map);
 	}
 	onMount(loadMap);
 

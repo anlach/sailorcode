@@ -9,9 +9,11 @@
 		"prepare": "svelte-kit sync",
 		"test": "playwright test",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
-		"format": "prettier --write --plugin-search-dir=. ."
+		"format": "prettier --write --plugin-search-dir=. .",
+		"gen": "echo -n 'export const data = ' > src/lib/data/sailing-tracks.js && togeojson raw/sailing-tracks.gpx >> src/lib/data/sailing-tracks.js"
 	},
 	"devDependencies": {
+		"@mapbox/togeojson": "^0.16.0",
 		"@playwright/test": "^1.22.2",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/adapter-static": "^1.0.0-next.38",
