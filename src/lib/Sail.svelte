@@ -1,12 +1,16 @@
 <script>
-	import { blur } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
+	import Map from '$lib/Map.svelte';
 	export let shrink;
 	export let grow;
 </script>
 
 <div class="sail">
+	{#if grow}
+	<Map />
+	{/if}
 	<div class:shrink class:grow class="textbox">
-		<h1 in:blur out:blur>SAIL</h1>
+		<h1>SAIL</h1>
 	</div>
 </div>
 
