@@ -7,10 +7,10 @@
 </script>
 
 <div class="code">
-	<div class:shrink class:grow class="textbox">
+<div class:shrink class:grow class="textbox">
 		<h1>CODE</h1>
 	</div>
-	<!-- <p
+<!-- <p
 		class="codepen"
 		data-height="300"
 		data-default-tab="result"
@@ -23,9 +23,9 @@
 			>) on <a href="https://codepen.io">CodePen</a>.</span
 		>
 	</p> -->
-	<!-- <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script> -->
-	<Gridscape />
-	{#if grow}
+<!-- <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script> -->
+<Gridscape />
+{#if grow}
 		<div class="links" transition:blur>
 			<a
 				href="https://www.freecodecamp.org/anlach"
@@ -49,15 +49,13 @@
 </div>
 
 <style>
-	:root {
+	.code {
 		--text-color: rgb(67, 226, 19);
 		--gradient-color1: rgb(44, 70, 68);
 		--half-gradient-color1: rgba(44, 70, 68, 0.5);
 		--mid-color1-color2: rgb(24, 48, 42);
 		--gradient-color2: rgb(4, 26, 16);
 		--half-gradient-color2: rgba(4, 26, 16, 0.5);
-	}
-	.code {
 		height: 100%;
 		background-color: var(--gradient-color2);
 	}

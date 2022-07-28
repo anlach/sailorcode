@@ -41,9 +41,9 @@
 		background-repeat: no-repeat;
 		--text-color: rgb(70, 113, 207);
 	}
-	@media (min-aspect-ratio: 1.35) {
+	@media screen and (min-device-width: 700px) {
 		.sail {
-			background-size: 100vw auto;
+			background-size: 100vw 90vh;
 		}
 	}
 	.sail .textbox {
@@ -62,12 +62,11 @@
 		text-shadow: 0 0 30px white;
 	}
 	.links {
-		position: absolute;
+		/* position: absolute; */
 		top: 0;
 		left: 0;
 		right: 0;
 		z-index: 1;
-		margin: 5px 0;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -76,6 +75,6 @@
 	.links a {
 		color: var(--text-color);
 		text-decoration: none;
-		margin: 0 5px;
+		margin: 5px 5px;
 	}
 </style>

@@ -1,10 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
-	import { fly } from 'svelte/transition';
+	import { blur, fade } from 'svelte/transition';
 	import { data } from '$lib/data/sailing-tracks.js';
 
 	function loadMap() {
-		var map = L.map('map').setView([35.0, -77.0], 5);
+		var map = L.map('map').setView([36.5, -75.0], 5);
 		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			maxZoom: 19,
 			attribution: '© OpenStreetMap'
@@ -25,16 +25,22 @@
 </script>
 
 <div class="outer">
-	<div id="map" transition:fly={{y: -400}} on:click={handleClick} />
+	<div id="map" in:fade={{delay: 200}} out:fade={{duration: 100}} on:click={handleClick} />
 </div>
 
 <style>
 	#map {
-		height: 70vh;
-		border-radius: 20px;
-		border: 2px solid gray;
+		width: 94%;
+		height: 94%;
+		z-index: 0;
+		border-radius: 18px;
+		border: 1px solid gray;
+		margin: 3% 3%;
 	}
     .outer {
-        padding: 5% 5%;
+		height: 60vh;
+		width: 70vw;
+		min-width: 200px;
+		margin: auto;
     }
 </style>

@@ -54,5 +54,6 @@
     #code-box {
         position: relative;
         flex-grow: 1;
+        background-color: rgb(4, 26, 16);
     }
 </style>
