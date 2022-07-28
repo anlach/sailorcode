@@ -1,4 +1,6 @@
 <script>
+import Gridscape from "./Gridscape.svelte";
+
 	export let shrink;
 	export let grow;
 </script>
@@ -7,41 +9,21 @@
 	<div class:shrink class:grow class="textbox">
 		<h1>CODE</h1>
 	</div>
-	<div class="horizon-blur" />
-	<svg>
-		<line class="horizontal" x1="0" y1="0%" x2="100%" y2="0%" />
-		<line class="horizontal" x1="0" y1="0%" x2="100%" y2="0%" />
-		<line class="horizontal" x1="0" y1="0%" x2="100%" y2="0%" />
-		<line class="horizontal" x1="0" y1="0%" x2="100%" y2="0%" />
-		<line class="horizontal" x1="0" y1="0%" x2="100%" y2="0%" />
-		<line class="horizontal" x1="0" y1="0%" x2="100%" y2="0%" />
-		<line class="radial" x1="50%" y1="-10%" x2="0" y2="3%" />
-		<line class="radial" x1="50%" y1="-10%" x2="0" y2="5%" />
-		<line class="radial" x1="50%" y1="-10%" x2="0" y2="8%" />
-		<line class="radial" x1="50%" y1="-10%" x2="0" y2="11%" />
-		<line class="radial" x1="50%" y1="-10%" x2="0" y2="15%" />
-		<line class="radial" x1="50%" y1="-10%" x2="0" y2="20%" />
-		<line class="radial" x1="50%" y1="-10%" x2="0" y2="26%" />
-		<line class="radial" x1="50%" y1="-10%" x2="0" y2="36%" />
-		<line class="radial" x1="50%" y1="-10%" x2="0" y2="50%" />
-		<line class="radial" x1="50%" y1="-10%" x2="0" y2="75%" />
-		<line class="radial" x1="50%" y1="-10%" x2="0" y2="120%" />
-		<line class="radial" x1="50%" y1="-9%" x2="0" y2="230%" />
-		<line class="radial" x1="50%" y1="-8%" x2="0" y2="750%" />
-		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="3%" />
-		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="5%" />
-		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="8%" />
-		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="11%" />
-		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="15%" />
-		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="20%" />
-		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="26%" />
-		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="36%" />
-		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="50%" />
-		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="75%" />
-		<line class="radial" x1="50%" y1="-10%" x2="100%" y2="120%" />
-		<line class="radial" x1="50%" y1="-9%" x2="100%" y2="230%" />
-		<line class="radial" x1="50%" y1="-8%" x2="100%" y2="750%" />
-	</svg>
+	<!-- <p
+		class="codepen"
+		data-height="300"
+		data-default-tab="result"
+		data-slug-hash="eYMpGrO"
+		data-user="anlach"
+	>
+		<span
+			>See the Pen <a href="https://codepen.io/anlach/pen/eYMpGrO"> Random Quotes</a> by Andrew (<a
+				href="https://codepen.io/anlach">@anlach</a
+			>) on <a href="https://codepen.io">CodePen</a>.</span
+		>
+	</p> -->
+	<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+	<Gridscape />
 </div>
 
 <style>
@@ -68,57 +50,18 @@
 		top: 0%;
 		transition: top 0.5s;
 	}
-	.code .horizon-blur {
-		height: 15%;
-		width: 100%;
-		position: absolute;
-		top: 45%;
-		background: linear-gradient(to top, green, rgb(0, 65, 0) 10%, var(--gradient-color2));
-	}
 	.code h1 {
 		color: rgb(67, 226, 19);
 		text-shadow: 0 0 30px rgb(51, 172, 15);
 	}
-	svg {
-		width: 100%;
-		height: 40%;
-		position: absolute;
-		top: 60%;
-	}
-	line {
-		stroke: green;
-	}
-	.horizontal:first-of-type {
-		animation-name: code-grid;
-		animation-duration: 2s;
-		animation-iteration-count: infinite;
-		animation-timing-function: cubic-bezier(1, 0, 1, 1);
-	}
-	.horizontal:nth-of-type(2) {
-		animation-name: code-grid;
-		animation-duration: 2s;
-		animation-iteration-count: infinite;
-		animation-timing-function: cubic-bezier(1, 0, 1, 1);
-		animation-delay: 0.5s;
-	}
-	.horizontal:nth-of-type(3) {
-		animation-name: code-grid;
-		animation-duration: 2s;
-		animation-iteration-count: infinite;
-		animation-timing-function: cubic-bezier(1, 0, 1, 1);
-		animation-delay: 1s;
-	}
-	.horizontal:nth-of-type(4) {
-		animation-name: code-grid;
-		animation-duration: 2s;
-		animation-iteration-count: infinite;
-		animation-timing-function: cubic-bezier(1, 0, 1, 1);
-		animation-delay: 1.5s;
-	}
-
-	@keyframes code-grid {
-		to {
-			transform: translateY(100%);
-		}
+	.codepen {
+		height: 300px;
+		box-sizing: border-box;
+		display: absolute;
+		align-items: center;
+		justify-content: center;
+		border: 2px solid;
+		margin: 1em 0;
+		padding: 1em;
 	}
 </style>
