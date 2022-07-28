@@ -54,6 +54,7 @@
     #code-box {
         position: relative;
         flex-grow: 1;
-        background-color: rgb(4, 26, 16);
+		--gradient-color2: rgb(4, 26, 16);
+        background-color: var(--gradient-color2);
     }
 </style>
