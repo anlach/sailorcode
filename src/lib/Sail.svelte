@@ -1,5 +1,5 @@
 <script>
-	import { fly } from 'svelte/transition';
+	import { blur } from 'svelte/transition';
 	import Map from '$lib/Map.svelte';
 	export let shrink;
 	export let grow;
@@ -7,7 +7,23 @@
 
 <div class="sail">
 	{#if grow}
-	<Map />
+		<div class="links" transition:blur>
+			<a
+				href="https://www.instagram.com/anlach"
+				target="_blank"
+				on:click={(e) => e.stopPropagation()}
+			>
+				<span class="fa-brands fa-instagram" alt="Instagram" title="Instagram" />
+			</a>
+			<a
+				href="https://www.facebook.com/andrewpants/"
+				target="_blank"
+				on:click={(e) => e.stopPropagation()}
+			>
+				<span class="fa-brands fa-facebook" alt="Facebook" title="Facebook" />
+			</a>
+		</div>
+		<Map />
 	{/if}
 	<div class:shrink class:grow class="textbox">
 		<h1>SAIL</h1>
@@ -23,6 +39,7 @@
 		background-position: left;
 		background-size: auto 90vh;
 		background-repeat: no-repeat;
+		--text-color: rgb(70, 113, 207);
 	}
 	@media (min-aspect-ratio: 1.35) {
 		.sail {
@@ -41,7 +58,24 @@
 		transition: bottom 0.5s;
 	}
 	.sail h1 {
-		color: rgb(70, 113, 207);
+		color: var(--text-color);
 		text-shadow: 0 0 30px white;
+	}
+	.links {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+		margin: 5px 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 3rem;
+	}
+	.links a {
+		color: var(--text-color);
+		text-decoration: none;
+		margin: 0 5px;
 	}
 </style>

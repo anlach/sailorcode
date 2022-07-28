@@ -25,7 +25,7 @@
 </script>
 
 <div class="outer">
-	<div id="map" transition:fly={{ y: -2000, duration: 800 }} on:click={handleClick} />
+	<div id="map" transition:fly={{y: -400}} on:click={handleClick} />
 </div>
 
 <style>
