@@ -33,12 +33,14 @@
  on:click={sailClick}>
 	<Sail grow={growSail} shrink={shrinkSail}/>
 </div>
-<div id="code-box" on:click={codeClick}>
+<div id="code-box" class:growSail class:shrinkSail
+on:click={codeClick}>
 	<Code grow={shrinkSail} shrink={growSail}/>
 </div>
 
 <style>
     #sail-box {
+        position: relative;
         height: 50vh;
         transition: height 0.5s;
     }
@@ -53,8 +55,17 @@
 
     #code-box {
         position: relative;
-        flex-grow: 1;
+        height: 50vh;
 		--gradient-color2: rgb(4, 26, 16);
         background-color: var(--gradient-color2);
+        transition: height 0.5s;
+    }
+    #code-box.growSail {
+        height: 10vh;
+        transition: height 0.5s;
+    }
+    #code-box.shrinkSail {
+        height: 90vh;
+        transition: height 0.5s;
     }
 </style>
