@@ -6,6 +6,7 @@
 }
 
 html {
+    height: 100vh;
     height: 100svh;
     width: 100%;
     font-family: Geneva, Tahoma, sans-serif;
@@ -25,5 +26,6 @@ body > div {
 h1 {
     font-size: 8vh;
     text-align: center;
+    height: 10vh;
     height: 10svh;
 }

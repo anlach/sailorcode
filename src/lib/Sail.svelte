@@ -23,7 +23,9 @@
 				<span class="fa-brands fa-facebook" alt="Facebook" title="Facebook" />
 			</a>
 		</div>
-		<Map />
+		<div class="outer">
+			<Map />
+		</div>
 	{/if}
 	<div class:shrink class:grow class="textbox">
 		<h1>SAIL</h1>
@@ -38,12 +40,14 @@
 		background-image: url('/img/IMG_4543.JPG');
 		background-position: left;
 		background-size: auto 90vh;
+		background-size: auto 90svh;
 		background-repeat: no-repeat;
 		--text-color: rgb(70, 113, 207);
 	}
 	@media screen and (min-device-width: 700px) {
 		.sail {
 			background-size: 100vw 90vh;
+			background-size: 100vw 90svh;
 		}
 	}
 	.sail .textbox {
@@ -77,4 +81,11 @@
 		text-decoration: none;
 		margin: 5px 5px;
 	}
+    .outer {
+		height: 60vh;
+		height: 60svh;
+		width: 70vw;
+		min-width: 200px;
+		margin: auto;
+    }
 </style>
