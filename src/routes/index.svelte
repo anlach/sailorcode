@@ -41,31 +41,31 @@ on:click={codeClick}>
 <style>
     #sail-box {
         position: relative;
-        height: 50vh;
+        height: 50svh;
         transition: height 0.5s;
     }
     #sail-box.growSail {
-        height: 90vh;
+        height: 90svh;
         transition: height 0.5s;
     }
     #sail-box.shrinkSail {
-        height: 10vh;
+        height: 10svh;
         transition: height 0.5s;
     }
 
     #code-box {
         position: relative;
-        height: 50vh;
+        height: 50svh;
 		--gradient-color2: rgb(4, 26, 16);
         background-color: var(--gradient-color2);
         transition: height 0.5s;
     }
     #code-box.growSail {
-        height: 10vh;
+        height: 10svh;
         transition: height 0.5s;
     }
     #code-box.shrinkSail {
-        height: 90vh;
+        height: 90svh;
         transition: height 0.5s;
     }
 </style>

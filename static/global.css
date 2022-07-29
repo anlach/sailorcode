@@ -5,7 +5,14 @@
     box-sizing: border-box;
 }
 
-html, body, body > div {
+html {
+    height: 100svh;
+    width: 100%;
+    font-family: Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+body, body > div {
     height: 100%;
     width: 100%;
 }
@@ -15,17 +22,8 @@ body > div {
     flex-direction: column;
 }
 
-html {
-    font-family: Geneva, Tahoma, sans-serif;
-    font-size: 20px;
-}
-
 h1 {
-    font-size: 4rem;
-}
-
-@media (max-width: 30rem) {
-    h1 {
-        font-size: 3rem;
-    }
+    font-size: 8vh;
+    text-align: center;
+    height: 10svh;
 }

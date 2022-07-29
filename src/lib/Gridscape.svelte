@@ -10,12 +10,6 @@
 	<div class="horizontal"></div>
 	<div class="horizontal"></div>
 	<svg>
-		<!-- <line class="horizontal" x1="0" y1="0%" x2="100%" y2="0%" />
-		<line class="horizontal" x1="0" y1="0%" x2="100%" y2="0%" />
-		<line class="horizontal" x1="0" y1="0%" x2="100%" y2="0%" />
-		<line class="horizontal" x1="0" y1="0%" x2="100%" y2="0%" />
-		<line class="horizontal" x1="0" y1="0%" x2="100%" y2="0%" />
-		<line class="horizontal" x1="0" y1="0%" x2="100%" y2="0%" /> -->
 		<line class="radial" x1="50%" y1="-10%" x2="0" y2="3%" />
 		<line class="radial" x1="50%" y1="-10%" x2="0" y2="5%" />
 		<line class="radial" x1="50%" y1="-10%" x2="0" y2="8%" />
