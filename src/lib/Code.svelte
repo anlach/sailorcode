@@ -1,9 +1,23 @@
 <script>
 	import Gridscape from './Gridscape.svelte';
-	import { blur } from 'svelte/transition';
+	import Project from './Project.svelte';
+	import { blur, scale, fly } from 'svelte/transition';
+	import { cubicInOut, cubicIn } from 'svelte/easing';
 
 	export let shrink;
 	export let grow;
+
+	function flyOut(node, { duration, y }) {
+		return {
+			duration,
+			css: (t) => {
+				const eased = cubicIn(t);
+
+				return `
+				    transform: scale(${1/(0.1 + eased)}) translateY(${y * (1 - eased)}%);`;
+			}
+		};
+	}
 </script>
 
 <div class="code">
@@ -27,6 +41,26 @@
 	<!-- <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script> -->
 	<Gridscape />
 	{#if grow}
+		<div
+			class="projects"
+			in:scale={{
+				easing: cubicInOut,
+				opacity: 1,
+				duration: 1000,
+				delay: 200
+			}}
+			out:fly={{duration: 800, y: 500}}
+		>
+			<!-- out:flyOut={{duration: 800, y: 80}} -->
+			<Project pos="p-3" />
+			<Project pos="p-2" />
+			<Project pos="p-1" />
+			<Project pos="p2" />
+			<Project pos="p1" />
+			<Project pos="p0" />
+			<!-- <Project />
+			<Project /> -->
+		</div>
 		<div class="links" transition:blur>
 			<a
 				href="https://www.freecodecamp.org/anlach"
@@ -58,6 +92,7 @@
 		--half-gradient-color2: rgba(4, 26, 16, 0.5);
 		height: 100%;
 		width: 100%;
+		overflow: hidden;
 	}
 	.links {
 		position: absolute;
@@ -83,14 +118,25 @@
 		position: absolute;
 		transition: top 0.5s;
 	}
-	.code .textbox.shrink,
-	.code .textbox.grow {
+	.code .textbox.shrink, .code .textbox.grow {
 		top: 0%;
 		transition: top 0.5s;
+	}
+	.code .textbox.shrink{
+		/* transition-delay: 0.3s; */
 	}
 	.code h1 {
 		color: var(--text-color);
 		text-shadow: 0 0 30px rgb(51, 172, 15);
+	}
+	.projects {
+		position: absolute;
+		top: 15%;
+		width: 100%;
+		height: 70%;
+		perspective: 30rem;
+		transform-style: preserve-3d;
+		margin: auto;
 	}
 	/* .codepen {
 		height: 300px;

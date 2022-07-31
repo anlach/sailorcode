@@ -56,10 +56,12 @@
 		position: absolute;
 		transition: bottom 0.5s;
 	}
-	.sail .textbox.shrink,
-	.sail .textbox.grow {
+	.sail .textbox.grow, .sail .textbox.shrink {
 		bottom: 0%;
 		transition: bottom 0.5s;
+	}
+	.sail .textbox.grow {
+		/* transition-delay: 0.3s; */
 	}
 	.sail h1 {
 		color: var(--text-color);

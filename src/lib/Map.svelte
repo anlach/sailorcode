@@ -31,8 +31,7 @@
 		width: 94%;
 		height: 94%;
 		z-index: 0;
-		border-radius: 18px;
-		border: 1px solid gray;
+		box-shadow: 0px 0px 15px rgb(18, 18, 59); 
 		margin: 3% 3%;
 	}
 </style>
