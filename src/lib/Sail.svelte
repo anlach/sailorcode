@@ -60,9 +60,6 @@
 		bottom: 0%;
 		transition: bottom 0.5s;
 	}
-	.sail .textbox.grow {
-		/* transition-delay: 0.3s; */
-	}
 	.sail h1 {
 		color: var(--text-color);
 		text-shadow: 0 0 30px white;

@@ -118,9 +118,6 @@
 		top: 0%;
 		transition: top 0.5s;
 	}
-	.code .textbox.shrink {
-		/* transition-delay: 0.3s; */
-	}
 	.code h1 {
 		color: var(--text-color);
 		text-shadow: 0 0 30px rgb(51, 172, 15);
