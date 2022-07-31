@@ -31,7 +31,7 @@
 		width: 94%;
 		height: 94%;
 		z-index: 0;
-		box-shadow: 0px 0px 15px rgb(18, 18, 59); 
+		box-shadow: 0px 0px 15px 5px rgb(18, 18, 59); 
 		margin: 3% 3%;
 	}
 </style>

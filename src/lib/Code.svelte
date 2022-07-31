@@ -7,6 +7,16 @@
 	export let shrink;
 	export let grow;
 
+	const projects = [0, 1, 2, 3, 4, 5];
+	let iProj = 1;
+	function projClickHandler(i){
+		const handler = (e) => {
+			// console.log("clicked project", i);
+			e.stopPropagation();
+			iProj = i;
+		}
+		return handler;
+	}
 </script>
 
 <div class="code">
@@ -38,16 +48,13 @@
 				duration: 1000,
 				delay: 200
 			}}
-			out:fly={{duration: 800, y: 500}}
+			out:fly={{ duration: 800, y: 500 }}
 		>
-			<Project pos="p-3" />
-			<Project pos="p-2" />
-			<Project pos="p-1" />
-			<Project pos="p2" />
-			<Project pos="p1" />
-			<Project pos="p0" />
-			<!-- <Project />
-			<Project /> -->
+			{#each projects as i}
+				<Project 
+					pos={iProj - i} 
+					on:click={projClickHandler(i)}/>
+			{/each}
 		</div>
 		<div class="links" transition:blur>
 			<a
@@ -106,11 +113,12 @@
 		position: absolute;
 		transition: top 0.5s;
 	}
-	.code .textbox.shrink, .code .textbox.grow {
+	.code .textbox.shrink,
+	.code .textbox.grow {
 		top: 0%;
 		transition: top 0.5s;
 	}
-	.code .textbox.shrink{
+	.code .textbox.shrink {
 		/* transition-delay: 0.3s; */
 	}
 	.code h1 {
