@@ -2,22 +2,11 @@
 	import Gridscape from './Gridscape.svelte';
 	import Project from './Project.svelte';
 	import { blur, scale, fly } from 'svelte/transition';
-	import { cubicInOut, cubicIn } from 'svelte/easing';
+	import { cubicInOut } from 'svelte/easing';
 
 	export let shrink;
 	export let grow;
 
-	function flyOut(node, { duration, y }) {
-		return {
-			duration,
-			css: (t) => {
-				const eased = cubicIn(t);
-
-				return `
-				    transform: scale(${1/(0.1 + eased)}) translateY(${y * (1 - eased)}%);`;
-			}
-		};
-	}
 </script>
 
 <div class="code">
@@ -51,7 +40,6 @@
 			}}
 			out:fly={{duration: 800, y: 500}}
 		>
-			<!-- out:flyOut={{duration: 800, y: 80}} -->
 			<Project pos="p-3" />
 			<Project pos="p-2" />
 			<Project pos="p-1" />
