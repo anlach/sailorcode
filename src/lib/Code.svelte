@@ -7,17 +7,31 @@
 	export let shrink;
 	export let grow;
 
-	const projects = [1, 2, 3];
+	const projects = [
+		{
+			title: 'JavaScript Calculator',
+			image: '/img/Calculator.png',
+			url: 'https://codepen.io/anlach/pen/BarKjKX'
+		},
+		{ title: 'Quote Generator', image: '/img/RandomQuotes.png',
+		url: 'https://codepen.io/anlach/pen/eYMpGrO' },
+		{ title: '25 or 6 to 5 Clock', image: '/img/25-5-Clock.png', 
+		url: 'https://codepen.io/anlach/pen/PoRzLeQ' }
+	];
 	const createProjects = [2, 1, 0];
 	let iProj = 0;
 	// This resets iProj to 0 when grow changes
-	$: iProj = grow? 0 : -1;
-	function projClickHandler(i){
+	$: iProj = grow ? 0 : -1;
+	function projClickHandler(i) {
 		const handler = (e) => {
 			// console.log("clicked project", i);
 			e.stopPropagation();
-			iProj = i;
-		}
+			if (i == iProj) {
+				window.open(projects[i].url, "_blank")
+			} else {
+				iProj = i;
+			}
+		};
 		return handler;
 	}
 </script>
@@ -43,6 +57,7 @@
 	<!-- <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script> -->
 	<Gridscape />
 	{#if grow}
+		<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 		<div
 			class="projects"
 			in:scale={{
@@ -54,10 +69,12 @@
 			out:fly={{ duration: 800, y: 500 }}
 		>
 			{#each createProjects as i}
-				<Project 
-					pos={i - iProj} 
-					title="Project {projects[i]}"
-					on:click={projClickHandler(i)}/>
+				<Project
+					pos={i - iProj}
+					title={projects[i].title}
+					image={projects[i].image}
+					on:click={projClickHandler(i)}
+				/>
 			{/each}
 		</div>
 		<div class="links" transition:blur>
@@ -131,7 +148,7 @@
 		top: 15%;
 		width: 100%;
 		height: 70%;
-		perspective: 200vw; 	
+		perspective: 250vw;
 		transform-style: preserve-3d;
 		margin: auto;
 		/* overflow: hidden; */

@@ -1,22 +1,19 @@
 <script>
-	import { transition_in } from 'svelte/internal';
-
-	import Index from '../routes/index.svelte';
-
 	export let pos;
 	export let title;
+	export let image;
 
 	function getTransform(position) {
 		let rotation = '';
-		let translation1 = 'translateZ(40vw)';
+		let translation1 = 'translateZ(50vw)';
 		let translation2 = '';
 		if (position < 0) {
-			rotation = 'rotateY(90deg) ';
-			translation1 = `translateX(${-50 + 10 * position}%) `;
+			rotation = 'rotateY(80deg) ';
+			translation1 = `translateX(${-50 + 20 * position}%) `;
 			translation2 = 'translateX(-50%)';
 		} else if (position > 0) {
-			rotation = 'rotateY(-90deg) ';
-			translation1 = `translateX(${50 + 10 * position}%) `;
+			rotation = 'rotateY(-80deg) ';
+			translation1 = `translateX(${50 + 20 * position}%) `;
 			translation2 = 'translateX(50%)';
 		}
 		// rotation = "";
@@ -25,10 +22,11 @@
 </script>
 
 <!-- <span style="color: white">{getTransform(pos)}</span> -->
-<div class="container" 
-    style="transform: {getTransform(pos)};"
-    on:click>
-	<div class="black">{title}</div>
+<div class="container" style="transform: {getTransform(pos)};" on:click>
+	<div class="black">
+		<div class="image" style="background-image: url({image});" />
+		<h2>{title}</h2>
+	</div>
 </div>
 
 <style>
@@ -38,20 +36,41 @@
 		width: 100%;
 		height: 100%;
 		text-align: center;
-		justify-content: center;
-		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		padding: 10px;
 	}
 	.container {
 		box-shadow: 0 0 10px 5px green;
 		position: absolute;
-		height: 80%;
-		top: 10%;
-		width: 50%;
-		left: 25%;
-		transition: transform 0.3s;
+		height: 60%;
+		top: 20%;
+		width: 30%;
+		left: 35%;
+		transition: transform 0.5s;
 		z-index: 10;
 	}
 	.container:hover {
 		box-shadow: 0 0 20px 15px green;
+	}
+	h2 {
+		color: var(--text-color);
+		padding: 5px;
+		flex-grow: 1;
+		text-align: center;
+	}
+	@media (max-width: 620px) {
+		h2 {
+			font-size: smaller;
+		}
+	}
+	.image {
+		width: 100%;
+		flex-grow: 20;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		margin: auto;
+		text-align: center;
 	}
 </style>
