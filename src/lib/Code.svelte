@@ -7,8 +7,11 @@
 	export let shrink;
 	export let grow;
 
-	const projects = [0, 1, 2, 3, 4, 5];
-	let iProj = 1;
+	const projects = [1, 2, 3];
+	const createProjects = [2, 1, 0];
+	let iProj = 0;
+	// This resets iProj to 0 when grow changes
+	$: iProj = grow? 0 : -1;
 	function projClickHandler(i){
 		const handler = (e) => {
 			// console.log("clicked project", i);
@@ -50,9 +53,10 @@
 			}}
 			out:fly={{ duration: 800, y: 500 }}
 		>
-			{#each projects as i}
+			{#each createProjects as i}
 				<Project 
-					pos={iProj - i} 
+					pos={i - iProj} 
+					title="Project {projects[i]}"
 					on:click={projClickHandler(i)}/>
 			{/each}
 		</div>
@@ -127,9 +131,11 @@
 		top: 15%;
 		width: 100%;
 		height: 70%;
-		perspective: 30rem;
+		perspective: 200vw; 	
 		transform-style: preserve-3d;
 		margin: auto;
+		/* overflow: hidden; */
+		z-index: 0;
 	}
 	/* .codepen {
 		height: 300px;
