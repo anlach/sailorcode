@@ -16,6 +16,12 @@
 		//     }
 		// }
 		L.geoJSON(data).addTo(map);
+		var myIcon = L.icon({
+			iconUrl: '/favicon.png',
+			iconSize: [36, 36]
+		});
+
+		L.marker([29.996151, -81.672363], { icon: myIcon }).addTo(map);
 	}
 	onMount(loadMap);
 
@@ -31,7 +37,7 @@
 		width: 94%;
 		height: 94%;
 		z-index: 0;
-		box-shadow: 0px 0px 15px 5px rgb(18, 18, 59); 
+		box-shadow: 0px 0px 15px 5px rgb(18, 18, 59);
 		margin: 3% 3%;
 	}
 </style>
