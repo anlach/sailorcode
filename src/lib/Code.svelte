@@ -13,12 +13,37 @@
 			image: '/img/Calculator.png',
 			url: 'https://codepen.io/anlach/pen/BarKjKX'
 		},
-		{ title: 'Quote Generator', image: '/img/RandomQuotes.png',
-		url: 'https://codepen.io/anlach/pen/eYMpGrO' },
-		{ title: '25 or 6 to 5 Clock', image: '/img/25-5-Clock.png', 
-		url: 'https://codepen.io/anlach/pen/PoRzLeQ' }
+		{
+			title: 'Quote Generator',
+			image: '/img/RandomQuotes.png',
+			url: 'https://codepen.io/anlach/pen/eYMpGrO'
+		},
+		{
+			title: '25 or 6 to 5 Clock',
+			image: '/img/25-5-Clock.png',
+			url: 'https://codepen.io/anlach/pen/PoRzLeQ'
+		},
+		{
+			title: 'JavaScript Calculator',
+			image: '/img/Calculator.png',
+			url: 'https://codepen.io/anlach/pen/BarKjKX'
+		},
+		{
+			title: 'JavaScript Calculator',
+			image: '/img/Calculator.png',
+			url: 'https://codepen.io/anlach/pen/BarKjKX'
+		},
+		{
+			title: 'JavaScript Calculator',
+			image: '/img/Calculator.png',
+			url: 'https://codepen.io/anlach/pen/BarKjKX'
+		}
 	];
-	const createProjects = [2, 1, 0];
+	const createProjects = new Array(projects.length)
+		.fill(0)
+		.map((e, i) => i)
+		.reverse();
+	console.log(createProjects);
 	let iProj = 0;
 	// This resets iProj to 0 when grow changes
 	$: iProj = grow ? 0 : -1;
@@ -27,7 +52,7 @@
 			// console.log("clicked project", i);
 			e.stopPropagation();
 			if (i == iProj) {
-				window.open(projects[i].url, "_blank")
+				window.open(projects[i].url, '_blank');
 			} else {
 				iProj = i;
 			}
@@ -58,24 +83,26 @@
 	<Gridscape />
 	{#if grow}
 		<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-		<div
-			class="projects"
-			in:scale={{
-				easing: cubicInOut,
-				opacity: 1,
-				duration: 1000,
-				delay: 200
-			}}
-			out:fly={{ duration: 800, y: 500 }}
-		>
-			{#each createProjects as i}
-				<Project
-					pos={i - iProj}
-					title={projects[i].title}
-					image={projects[i].image}
-					on:click={projClickHandler(i)}
-				/>
-			{/each}
+		<div class="project-outer">
+			<div
+				class="projects"
+				in:scale={{
+					easing: cubicInOut,
+					opacity: 1,
+					duration: 1000,
+					delay: 200
+				}}
+				out:fly={{ duration: 800, y: 500 }}
+			>
+				{#each createProjects as i}
+					<Project
+						pos={i - iProj}
+						title={projects[i].title}
+						image={projects[i].image}
+						on:click={projClickHandler(i)}
+					/>
+				{/each}
+			</div>
 		</div>
 		<div class="links" transition:blur>
 			<a
@@ -143,15 +170,19 @@
 		color: var(--text-color);
 		text-shadow: 0 0 30px rgb(51, 172, 15);
 	}
-	.projects {
+	.project-outer {
+		overflow: hidden;
 		position: absolute;
 		top: 15%;
 		width: 100%;
 		height: 70%;
+	}
+	.projects {
+		width: 100%;
+		height: 100%;
 		perspective: 250vw;
 		transform-style: preserve-3d;
 		margin: auto;
-		/* overflow: hidden; */
 		z-index: 0;
 	}
 	/* .codepen {
