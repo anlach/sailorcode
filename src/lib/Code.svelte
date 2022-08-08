@@ -66,20 +66,6 @@
 	<div class:shrink class:grow class="textbox">
 		<h1>CODE</h1>
 	</div>
-	<!-- <p
-		class="codepen"
-		data-height="300"
-		data-default-tab="result"
-		data-slug-hash="eYMpGrO"
-		data-user="anlach"
-	>
-		<span
-			>See the Pen <a href="https://codepen.io/anlach/pen/eYMpGrO"> Random Quotes</a> by Andrew (<a
-				href="https://codepen.io/anlach">@anlach</a
-			>) on <a href="https://codepen.io">CodePen</a>.</span
-		>
-	</p> -->
-	<!-- <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script> -->
 	<Gridscape />
 	{#if grow}
 		<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
@@ -185,14 +171,4 @@
 		margin: auto;
 		z-index: 0;
 	}
-	/* .codepen {
-		height: 300px;
-		box-sizing: border-box;
-		display: absolute;
-		align-items: center;
-		justify-content: center;
-		border: 2px solid;
-		margin: 1em 0;
-		padding: 1em;
-	} */
 </style>
