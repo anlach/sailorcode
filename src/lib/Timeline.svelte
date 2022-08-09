@@ -10,26 +10,29 @@
 <style>
 	input {
 		width: 100%;
-		height: 25px;
-		opacity: 0.5;
+		height: 0px;
+		opacity: 0.6;
 		transition: opacity 0.3s;
+        box-shadow: 0 0 25px 20px white;
 	}
 	input:hover {
-		opacity: 0.7;
+		opacity: 0.8;
 	}
 	input::-webkit-slider-thumb {
 		-webkit-appearance: none;
 		appearance: none;
-		width: 25px;
-		height: 25px;
-		background: #04aa6d;
+		width: 32px;
+		height: 32px;
+		background: url('/favicon.png');
 		cursor: pointer;
+        border: none;
 	}
 
 	input::-moz-range-thumb {
-		width: 25px;
-		height: 25px;
-		background: #04aa6d;
+		width: 32px;
+		height: 32px;
+		background: url('/favicon.png');
 		cursor: pointer;
+        border: none;
 	}
 </style>
