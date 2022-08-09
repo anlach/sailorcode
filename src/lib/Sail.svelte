@@ -1,6 +1,8 @@
 <script>
 	import { blur } from 'svelte/transition';
 	import Map from '$lib/Map.svelte';
+	import Story from '$lib/Story.svelte';
+	import Timeline from '$lib/Timeline.svelte';
 	export let shrink;
 	export let grow;
 </script>
@@ -23,9 +25,15 @@
 				<span class="fa-brands fa-facebook" alt="Facebook" title="Facebook" />
 			</a>
 		</div>
-		<div class="outer">
-			<Map />
+		<div class="split">
+			<div class="map-outer">
+				<Map />
+			</div>
+			<div class="story-outer">
+				<Story />
+			</div>
 		</div>
+		<Timeline />
 	{/if}
 	<div class:shrink class:grow class="textbox">
 		<h1>SAIL</h1>
@@ -56,7 +64,8 @@
 		position: absolute;
 		transition: bottom 0.5s;
 	}
-	.sail .textbox.grow, .sail .textbox.shrink {
+	.sail .textbox.grow,
+	.sail .textbox.shrink {
 		bottom: 0%;
 		transition: bottom 0.5s;
 	}
@@ -80,11 +89,18 @@
 		text-decoration: none;
 		margin: 5px 5px;
 	}
-    .outer {
-		height: 60vh;
-		height: 60svh;
-		width: 70vw;
+	.split {
+		height: 68vh;
+		height: 68svh;
+		width: 100vw;
+		display: flex;
+	}
+	.map-outer,
+	.story-outer {
+		height: 100%;
+		width: 50%;
 		min-width: 200px;
 		margin: auto;
-    }
+		padding: 2%;
+	}
 </style>

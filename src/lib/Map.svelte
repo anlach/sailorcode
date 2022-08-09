@@ -30,14 +30,13 @@
 	}
 </script>
 
-<div id="map" in:fade={{ delay: 200 }} out:fade={{ duration: 100 }} on:click={handleClick} />
+	<div id="map" in:fade={{ delay: 200 }} out:fade={{ duration: 100 }} on:click={handleClick} />
 
 <style>
 	#map {
-		width: 94%;
-		height: 94%;
+		width: 100%;
+		height: 100%;
 		z-index: 0;
-		box-shadow: 0px 0px 15px 5px rgb(18, 18, 59);
-		margin: 3% 3%;
+		box-shadow: 0px 0px 15px 5px rgb(18, 18, 59, 0.7);
 	}
 </style>
