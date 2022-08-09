@@ -22,21 +22,6 @@
 			title: '25 or 6 to 5 Clock',
 			image: '/img/25-5-Clock.png',
 			url: 'https://codepen.io/anlach/pen/PoRzLeQ'
-		},
-		{
-			title: 'JavaScript Calculator',
-			image: '/img/Calculator.png',
-			url: 'https://codepen.io/anlach/pen/BarKjKX'
-		},
-		{
-			title: 'JavaScript Calculator',
-			image: '/img/Calculator.png',
-			url: 'https://codepen.io/anlach/pen/BarKjKX'
-		},
-		{
-			title: 'JavaScript Calculator',
-			image: '/img/Calculator.png',
-			url: 'https://codepen.io/anlach/pen/BarKjKX'
 		}
 	];
 	const createProjects = new Array(projects.length)

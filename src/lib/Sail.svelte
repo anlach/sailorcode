@@ -98,9 +98,11 @@
 	.map-outer,
 	.story-outer {
 		height: 100%;
-		width: 50%;
 		min-width: 200px;
 		margin: auto;
 		padding: 2%;
+	}
+	.map-outer {
+		flex-grow: 1;
 	}
 </style>
