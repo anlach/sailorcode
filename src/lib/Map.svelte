@@ -1,6 +1,5 @@
 <script>
 	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
 	import { data } from '$lib/data/sailing-tracks.js';
 
 	export let timelineValue;
@@ -21,10 +20,15 @@
 	}
 	console.log(getNewPosition(100.0));
 	const boat = L.marker(getNewPosition(100.0), { icon: boatIcon });
-	$: boat.setLatLng(getNewPosition(timelineValue));
+	var map = null;
+	$: {
+		const pos = getNewPosition(timelineValue);
+		boat.setLatLng(pos);
+		if (map != null) map.panTo(pos);
+	}
 
 	function loadMap() {
-		var map = L.map('map').setView([36.5, -75.0], 5);
+		map = L.map('map').setView([36.5, -75.0], 5);
 		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			maxZoom: 19,
 			attribution: '© OpenStreetMap'
@@ -41,8 +45,6 @@
 
 <div
 	id="map"
-	in:fade={{ delay: 200 }}
-	out:fade={{ duration: 100 }}
 	on:click={handleClick}
 />
 
@@ -51,6 +53,5 @@
 		width: 100%;
 		height: 100%;
 		z-index: 0;
-		box-shadow: 0px 0px 15px 5px rgb(18, 18, 59, 0.7);
 	}
 </style>

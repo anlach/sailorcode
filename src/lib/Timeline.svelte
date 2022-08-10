@@ -17,11 +17,13 @@
 
 <style>
 	input {
+		-webkit-appearance: none;
 		width: 100%;
-		height: 0px;
+		height: 15px;
 		opacity: 0.8;
 		transition: opacity 0.3s;
-		box-shadow: 0 0 25px 20px white;
+		box-shadow: 0 0 15px 10px white;
+        margin: 10px 0;
 	}
 	input:hover {
 		opacity: 1;

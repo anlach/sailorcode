@@ -1,5 +1,5 @@
 <script>
-	import { blur } from 'svelte/transition';
+	import { blur, fade } from 'svelte/transition';
 	import Map from '$lib/Map.svelte';
 	import Story from '$lib/Story.svelte';
 	import Timeline from '$lib/Timeline.svelte';
@@ -16,7 +16,11 @@
 				target="_blank"
 				on:click={(e) => e.stopPropagation()}
 			>
-				<span class="fa-brands fa-instagram" alt="Instagram" title="Instagram" />
+				<span
+					class="fa-brands fa-instagram"
+					alt="Instagram"
+					title="Instagram"
+				/>
 			</a>
 			<a
 				href="https://www.facebook.com/andrewpants/"
@@ -26,12 +30,14 @@
 				<span class="fa-brands fa-facebook" alt="Facebook" title="Facebook" />
 			</a>
 		</div>
-		<div class="split">
-			<div class="map-outer">
-				<Map timelineValue={timelineValue} />
-			</div>
-			<div class="story-outer">
-				<Story />
+		<div class="pad" in:fade={{ delay: 200 }} out:fade={{ duration: 100 }}>
+			<div class="split">
+				<div class="map-outer">
+					<Map {timelineValue} />
+				</div>
+				<div class="story-outer">
+					<Story />
+				</div>
 			</div>
 		</div>
 		<Timeline bind:value={timelineValue} />
@@ -90,20 +96,27 @@
 		text-decoration: none;
 		margin: 5px 5px;
 	}
-	.split {
-		height: 68vh;
-		height: 68svh;
+	.pad {
+		padding: 2%;
+		height: 63vh;
+		height: 63svh;
 		width: 100vw;
+	}
+	.split {
 		display: flex;
+		height: 100%;
+		box-shadow: 0px 0px 15px 5px rgb(18, 18, 59, 0.7);
 	}
 	.map-outer,
 	.story-outer {
 		height: 100%;
-		min-width: 200px;
 		margin: auto;
-		padding: 2%;
+	}
+	.story-outer {
+		min-width: 200px;
 	}
 	.map-outer {
 		flex-grow: 1;
+		min-width: 100px;
 	}
 </style>
