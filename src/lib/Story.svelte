@@ -23,21 +23,12 @@
 		height: 10px;
 		position: absolute;
 	}
-	/* ::-webkit-scrollbar-button:start:decrement,
-	::-webkit-scrollbar-button:end:increment {
-		height: 10px;
-		display: block;
-		background-color: transparent;
-	} */
 	::-webkit-scrollbar-track-piece {
 		background-color: rgb(18, 18, 59, 0.5);
-		/* -webkit-border-radius: 6px; */
 	}
 	::-webkit-scrollbar-thumb:vertical {
 		height: 5px;
 		background-color: #666;
-		/* border: 1px solid #eee; */
-		/* -webkit-border-radius: 6px; */
 	}
 	.outer {
 		display: flex;
