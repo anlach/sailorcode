@@ -5,6 +5,7 @@
 	import Timeline from '$lib/Timeline.svelte';
 	export let shrink;
 	export let grow;
+	let timelineValue = 10000;
 </script>
 
 <div class="sail">
@@ -27,13 +28,13 @@
 		</div>
 		<div class="split">
 			<div class="map-outer">
-				<Map />
+				<Map timelineValue={timelineValue} />
 			</div>
 			<div class="story-outer">
 				<Story />
 			</div>
 		</div>
-		<Timeline />
+		<Timeline bind:value={timelineValue} />
 	{/if}
 	<div class:shrink class:grow class="textbox">
 		<h1>SAIL</h1>

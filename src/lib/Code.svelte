@@ -28,7 +28,6 @@
 		.fill(0)
 		.map((e, i) => i)
 		.reverse();
-	console.log(createProjects);
 	let iProj = 0;
 	// This resets iProj to 0 when grow changes
 	$: iProj = grow ? 0 : -1;
@@ -53,7 +52,9 @@
 	</div>
 	<Gridscape />
 	{#if grow}
-		<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+		<script
+			async
+			src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 		<div class="project-outer">
 			<div
 				class="projects"
@@ -87,10 +88,18 @@
 					title="freeCodeCamp Certifications"
 				/>
 			</a>
-			<a href="https://www.github.com/anlach" target="_blank" on:click={(e) => e.stopPropagation()}>
+			<a
+				href="https://www.github.com/anlach"
+				target="_blank"
+				on:click={(e) => e.stopPropagation()}
+			>
 				<span class="fa-brands fa-github" alt="Github" title="Github" />
 			</a>
-			<a href="https://codepen.io/anlach" target="_blank" on:click={(e) => e.stopPropagation()}>
+			<a
+				href="https://codepen.io/anlach"
+				target="_blank"
+				on:click={(e) => e.stopPropagation()}
+			>
 				<span class="fa-brands fa-codepen" alt="Codepen" title="Codepen" />
 			</a>
 		</div>

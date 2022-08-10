@@ -1,8 +1,16 @@
+<script>
+	import { fade } from 'svelte/transition';
+    export let value;
+
+</script>
+
 <input
+	in:fade={{ delay: 200 }}
+	out:fade={{ duration: 100 }}
 	type="range"
-	min="1"
-	max="100"
-	value="100"
+	min="0"
+	max="10000"
+	bind:value={value}
 	id="timeline"
 	on:click={(e) => e.stopPropagation()}
 />
@@ -11,12 +19,12 @@
 	input {
 		width: 100%;
 		height: 0px;
-		opacity: 0.6;
+		opacity: 0.8;
 		transition: opacity 0.3s;
-        box-shadow: 0 0 25px 20px white;
+		box-shadow: 0 0 25px 20px white;
 	}
 	input:hover {
-		opacity: 0.8;
+		opacity: 1;
 	}
 	input::-webkit-slider-thumb {
 		-webkit-appearance: none;
@@ -25,7 +33,7 @@
 		height: 32px;
 		background: url('/favicon.png');
 		cursor: pointer;
-        border: none;
+		border: none;
 	}
 
 	input::-moz-range-thumb {
@@ -33,6 +41,6 @@
 		height: 32px;
 		background: url('/favicon.png');
 		cursor: pointer;
-        border: none;
+		border: none;
 	}
 </style>
