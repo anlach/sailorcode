@@ -14,10 +14,6 @@
 		height: auto;
 		align-self: center;
 	}
-	html {
-		overflow-y: auto;
-		background-color: transparent;
-	}
 	::-webkit-scrollbar {
 		width: 10px;
 		height: 10px;

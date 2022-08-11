@@ -22,7 +22,7 @@
 				feature.geometry.coordinates[j][1],
 				feature.geometry.coordinates[j][0]
 			];
-			times[i + j] = feature.properties.coordTimes[j];
+			times[i + j] = new Date(feature.properties.coordTimes[j]);
 		}
 		i += J;
 	}
@@ -55,14 +55,14 @@
 		<div class="pad" in:fade={{ delay: 200 }} out:fade={{ duration: 100 }}>
 			<div class="split">
 				<div class="map-outer">
-					<Map {coords} {index} {data}/>
+					<Map {coords} {index} {data} {times}/>
 				</div>
 				<div class="story-outer">
 					<Story />
 				</div>
 			</div>
 		</div>
-		<Timeline max={nCoords - 1} bind:index />
+		<Timeline max={nCoords - 1} bind:index {times}/>
 	{/if}
 	<div class:shrink class:grow class="textbox">
 		<h1>SAIL</h1>

@@ -4,6 +4,7 @@
 	export let index;
 	export let coords;
 	export let data;
+	export let times;
 
 	var boatIcon = L.icon({
 		iconUrl: '/favicon.png',
@@ -36,15 +37,38 @@
 	}
 </script>
 
-<div
-	id="map"
-	on:click={handleClick}
-/>
+<div class="outer">
+	<div id="map" on:click={handleClick} />
+	<span class="time">
+		<h2>
+			{times[index].toDateString()}
+		</h2>
+	</span>
+</div>
 
 <style>
+	.outer {
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
 	#map {
 		width: 100%;
 		height: 100%;
 		z-index: 0;
+	}
+	.time {
+		text-align: center;
+		bottom: 0;
+		left: 0;
+		color: rgb(70, 113, 207);
+		position: absolute;
+	}
+	.time > h2 {
+		background-color: white;
+		display: inline-block;
+		font-family: monospace;
+	}
+	.time {
 	}
 </style>
