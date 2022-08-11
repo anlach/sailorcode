@@ -1,6 +1,7 @@
 <script>
 	import { fade } from 'svelte/transition';
-    export let value;
+    export let index;
+	export let max;
 
 </script>
 
@@ -9,8 +10,8 @@
 	out:fade={{ duration: 100 }}
 	type="range"
 	min="0"
-	max="10000"
-	bind:value={value}
+	max={max}
+	bind:value={index}
 	id="timeline"
 	on:click={(e) => e.stopPropagation()}
 />

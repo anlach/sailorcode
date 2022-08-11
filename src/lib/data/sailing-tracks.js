@@ -4,39 +4,6 @@ export const data = {
         {
             "type": "Feature",
             "properties": {
-                "name": "Andrew LaCharite (16674007)",
-                "desc": "Andrew LaCharite (16674007)",
-                "time": "2020-08-06T01:57:02Z",
-                "coordTimes": [
-                    "2020-08-06T01:57:02Z",
-                    "2020-08-06T01:57:02Z",
-                    "2020-08-06T02:01:54Z"
-                ]
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -73.76667,
-                        42.650714,
-                        67
-                    ],
-                    [
-                        -73.766672,
-                        42.650716,
-                        67
-                    ],
-                    [
-                        -73.766648,
-                        42.650699,
-                        67
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
                 "name": "Andrew LaCharite (9136360)",
                 "desc": "Andrew LaCharite (9136360)",
                 "time": "2020-08-11T01:25:30Z",

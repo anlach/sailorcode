@@ -3,9 +3,30 @@
 	import Map from '$lib/Map.svelte';
 	import Story from '$lib/Story.svelte';
 	import Timeline from '$lib/Timeline.svelte';
+	import { data } from '$lib/data/sailing-tracks.js';
 	export let shrink;
 	export let grow;
-	let timelineValue = 10000;
+
+	const nCoords = data.features.reduce((previous, current) => {
+		return previous + current.geometry.coordinates.length;
+	}, 0);
+	console.log('ncoords', nCoords);
+	let index = nCoords - 1;
+	let coords = new Array(nCoords);
+	let times = new Array(nCoords);
+	let i = 0;
+	for (const feature of data.features) {
+		let J = feature.geometry.coordinates.length;
+		for (let j = 0; j < J; j++) {
+			coords[i + j] = [
+				feature.geometry.coordinates[j][1],
+				feature.geometry.coordinates[j][0]
+			];
+			times[i + j] = feature.properties.coordTimes[j];
+		}
+		i += J;
+	}
+	console.log(coords.length, times.length);
 </script>
 
 <div class="sail">
@@ -30,17 +51,18 @@
 				<span class="fa-brands fa-facebook" alt="Facebook" title="Facebook" />
 			</a>
 		</div>
+
 		<div class="pad" in:fade={{ delay: 200 }} out:fade={{ duration: 100 }}>
 			<div class="split">
 				<div class="map-outer">
-					<Map {timelineValue} />
+					<Map {coords} {index} {data}/>
 				</div>
 				<div class="story-outer">
 					<Story />
 				</div>
 			</div>
 		</div>
-		<Timeline bind:value={timelineValue} />
+		<Timeline max={nCoords - 1} bind:index />
 	{/if}
 	<div class:shrink class:grow class="textbox">
 		<h1>SAIL</h1>

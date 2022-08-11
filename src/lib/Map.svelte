@@ -1,28 +1,21 @@
 <script>
 	import { onMount } from 'svelte';
-	import { data } from '$lib/data/sailing-tracks.js';
 
-	export let timelineValue;
-
-	let coords = [];
-	for (const feature of data.features) {
-		coords = coords.concat(feature.geometry.coordinates);
-	}
+	export let index;
+	export let coords;
+	export let data;
 
 	var boatIcon = L.icon({
 		iconUrl: '/favicon.png',
 		iconSize: [36, 36]
 	});
-	function getNewPosition(v) {
-		let i = parseInt((v / 10000.0) * coords.length) - 1;
-		if (i < 0) i = 3; // Don't start in Albany or be -1
-		return L.latLng(coords[i][1], coords[i][0]);
+	function getNewPosition(i) {
+		return L.latLng(coords[i][0], coords[i][1]);
 	}
-	console.log(getNewPosition(100.0));
-	const boat = L.marker(getNewPosition(100.0), { icon: boatIcon });
+	const boat = L.marker(getNewPosition(index), { icon: boatIcon });
 	var map = null;
 	$: {
-		const pos = getNewPosition(timelineValue);
+		const pos = getNewPosition(index);
 		boat.setLatLng(pos);
 		if (map != null) map.panTo(pos);
 	}
