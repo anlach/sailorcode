@@ -134,11 +134,8 @@
 		height: 100%;
 		margin: auto;
 	}
-	.story-outer {
-		min-width: 200px;
-	}
 	.map-outer {
 		flex-grow: 1;
-		min-width: 100px;
+		min-width: 112px;
 	}
 </style>

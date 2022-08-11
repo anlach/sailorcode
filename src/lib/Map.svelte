@@ -65,7 +65,7 @@
 		position: absolute;
 	}
 	.time > h2 {
-		background-color: white;
+		background-color: rgba(255, 255, 255, 0.4);
 		display: inline-block;
 		font-family: monospace;
 	}

@@ -4,7 +4,7 @@
 <div class="outer" >
 	<img src="/img/stories/gcs-haul.jpg" alt="hauled boat" />
 	<h2>Hauling Out</h2>
-	<p>The boat was stored in Florida up the St. Johns River.</p>
+	<p>Somerledi was stored in Florida up the St. Johns River.</p>
 </div>
 
 <style>
