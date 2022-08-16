@@ -1,18 +1,39 @@
 <script>
+	export let title, photos, alt, video, text, date;
 </script>
 
-<div class="outer" >
-	<img src="/img/stories/gcs-haul.jpg" alt="hauled boat" />
-	<h2>Hauling Out</h2>
-	<p>Somerledi was stored in Florida up the St. Johns River.</p>
+<div class="outer">
+	{#if photos.length > 0}
+		<img src={photos[0]} alt={alt[0]} />
+	{:else}
+		<iframe
+			src={"https://www.youtube.com/embed/" + video + 
+				 "?autoplay=1&origin=http://sailorcode.com"}
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; gyroscope; picture-in-picture"
+			allowfullscreen
+		/>
+	{/if}
+	<h2>{title}</h2>
+	<p>{text}</p>
+	<div class="break"></div>
+	<p>{date.toDateString()}</p>
 </div>
 
 <style>
-	img {
+	.break {
+		width: 100%;
+		border-bottom: 2px solid grey;
+	}
+	img, iframe {
 		width: 100%;
 		max-width: 500px;
 		height: auto;
 		align-self: center;
+	}
+	iframe {
+		height: 500px;
 	}
 	::-webkit-scrollbar {
 		width: 10px;

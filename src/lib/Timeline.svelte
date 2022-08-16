@@ -2,7 +2,6 @@
 	import { fade } from 'svelte/transition';
 	export let index;
 	export let max;
-	export let times;
 </script>
 
 <div class="outer">

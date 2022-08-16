@@ -4,8 +4,13 @@
 	import Story from '$lib/Story.svelte';
 	import Timeline from '$lib/Timeline.svelte';
 	import { data } from '$lib/data/sailing-tracks.js';
+	import story1 from '$lib/stories/urist-1.js';
+	import story2 from '$lib/stories/haul-florida.js';
 	export let shrink;
 	export let grow;
+
+	const stories = [story1, story2];
+	let story = story2;
 
 	const nCoords = data.features.reduce((previous, current) => {
 		return previous + current.geometry.coordinates.length;
@@ -26,7 +31,18 @@
 		}
 		i += J;
 	}
-	console.log(coords.length, times.length);
+
+	//  |---S--+--S---S---S|
+	function pickStory(timeIndex) {
+		let s = stories[stories.length - 1];
+		for (let i = stories.length - 2; i >= 0; i--) {
+			if (times[timeIndex] < stories[i].date && stories[i].date < s.date) {
+				s = stories[i];
+			}
+		}
+		return s;
+	}
+	$: story = pickStory(index);
 </script>
 
 <div class="sail">
@@ -55,14 +71,14 @@
 		<div class="pad" in:fade={{ delay: 200 }} out:fade={{ duration: 100 }}>
 			<div class="split">
 				<div class="map-outer">
-					<Map {coords} {index} {data} {times}/>
+					<Map {coords} {index} {data} {times} />
 				</div>
 				<div class="story-outer">
-					<Story />
+					<Story {...story} />
 				</div>
 			</div>
 		</div>
-		<Timeline max={nCoords - 1} bind:index {times}/>
+		<Timeline max={nCoords - 1} bind:index />
 	{/if}
 	<div class:shrink class:grow class="textbox">
 		<h1>SAIL</h1>
