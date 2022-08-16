@@ -10,13 +10,12 @@
 	export let grow;
 
 	const stories = [story1, story2];
-	let story = story2;
+	let storyInView = story2;
 
 	const nCoords = data.features.reduce((previous, current) => {
 		return previous + current.geometry.coordinates.length;
 	}, 0);
 	console.log('ncoords', nCoords);
-	let index = nCoords - 1;
 	let coords = new Array(nCoords);
 	let times = new Array(nCoords);
 	let i = 0;
@@ -32,17 +31,26 @@
 		i += J;
 	}
 
-	//  |---S--+--S---S---S|
+	// Add some padding into the timeline for each story
+	for (let story of stories) {
+		if (story.date < times[0]){
+			coords = [...new Array(20).fill(coords[0]), ...coords];
+			times = [...new Array(20).fill(story.date), ...times];
+		}
+	}
+	let index = times.length - 1;
+
 	function pickStory(timeIndex) {
+	  	//  |---S--+--S---S---S|
 		let s = stories[stories.length - 1];
 		for (let i = stories.length - 2; i >= 0; i--) {
-			if (times[timeIndex] < stories[i].date && stories[i].date < s.date) {
+			if (times[timeIndex] <= stories[i].date && stories[i].date < s.date) {
 				s = stories[i];
 			}
 		}
 		return s;
 	}
-	$: story = pickStory(index);
+	$: storyInView = pickStory(index);
 </script>
 
 <div class="sail">
@@ -74,11 +82,11 @@
 					<Map {coords} {index} {data} {times} />
 				</div>
 				<div class="story-outer">
-					<Story {...story} />
+					<Story {...storyInView} />
 				</div>
 			</div>
 		</div>
-		<Timeline max={nCoords - 1} bind:index />
+		<Timeline max={times.length - 1} bind:index />
 	{/if}
 	<div class:shrink class:grow class="textbox">
 		<h1>SAIL</h1>

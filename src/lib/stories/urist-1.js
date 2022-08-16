@@ -1,7 +1,7 @@
 export default {
     title: "Sailing Urist",
     latlng: [43.268957570495544, -74.05304187024247],
-    date: new Date("1 June, 2021"),
+    date: new Date("1 July, 2020"),
     photos: [],
     alt: [],
     video: "oyqBjDpv3eU",
