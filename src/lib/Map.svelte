@@ -69,6 +69,4 @@
 		display: inline-block;
 		font-family: monospace;
 	}
-	.time {
-	}
 </style>
