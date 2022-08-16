@@ -70,7 +70,7 @@
 		text-decoration: none;
 		transition: color 0.5s;
 	}
-	span:hover {
+	.photos:hover span {
 		color: rgba(255, 255, 255, 0.7);
 		transition: color 0.5s; 
 	}
