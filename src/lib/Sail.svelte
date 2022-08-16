@@ -9,13 +9,13 @@
 	export let shrink;
 	export let grow;
 
+	// stories are chronologically ordered
 	const stories = [story1, story2];
 	let storyInView = story2;
 
 	const nCoords = data.features.reduce((previous, current) => {
 		return previous + current.geometry.coordinates.length;
 	}, 0);
-	console.log('ncoords', nCoords);
 	let coords = new Array(nCoords);
 	let times = new Array(nCoords);
 	let i = 0;
@@ -31,26 +31,34 @@
 		i += J;
 	}
 
-	// Add some padding into the timeline for each story
+	// Add some padding into the timeline for stories
+	i = 0;
+	let stops = [];
+	var stopCoords = stories.map((s) => s.latLng);
 	for (let story of stories) {
-		if (story.date < times[0]){
-			coords = [...new Array(20).fill(coords[0]), ...coords];
-			times = [...new Array(20).fill(story.date), ...times];
-		}
+		while (story.date > times[i]) i++;
+		coords = [
+			...coords.slice(0, i),
+			...new Array(20).fill(coords[i]),
+			...coords.slice(i, coords.length)
+		];
+		times = [
+			...times.slice(0, i),
+			...new Array(20).fill(story.date),
+			...times.slice(i, times.length)
+		];
+		stops.push(20 + i - 1);
 	}
-	let index = times.length - 1;
+	let timeIndex = times.length - 1;
 
-	function pickStory(timeIndex) {
-	  	//  |---S--+--S---S---S|
-		let s = stories[stories.length - 1];
-		for (let i = stories.length - 2; i >= 0; i--) {
-			if (times[timeIndex] <= stories[i].date && stories[i].date < s.date) {
-				s = stories[i];
-			}
-		}
-		return s;
+	function getStopIndex(timeIndex) {
+		//  |---S--+--S---S---S|
+		let stopIndex = stops.length - 1;
+		while (timeIndex < stops[stopIndex - 1]) stopIndex--;
+		return stopIndex;
 	}
-	$: storyInView = pickStory(index);
+	$: stopIndex = getStopIndex(timeIndex);
+	$: storyInView = stories[stopIndex];
 </script>
 
 <div class="sail">
@@ -79,14 +87,14 @@
 		<div class="pad" in:fade={{ delay: 200 }} out:fade={{ duration: 100 }}>
 			<div class="split">
 				<div class="map-outer">
-					<Map {coords} {index} {data} {times} />
+					<Map {coords} {timeIndex} {data} {times} {stopCoords} {stopIndex} />
 				</div>
 				<div class="story-outer">
 					<Story {...storyInView} />
 				</div>
 			</div>
 		</div>
-		<Timeline max={times.length - 1} bind:index />
+		<Timeline max={times.length - 1} bind:index={timeIndex} />
 	{/if}
 	<div class:shrink class:grow class="textbox">
 		<h1>SAIL</h1>

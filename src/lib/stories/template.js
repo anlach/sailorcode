@@ -1,6 +1,6 @@
 export default {
     title: "",
-    latlng: [],
+    latLng: [],
     date: "",
     photos: [],
     alt: [],

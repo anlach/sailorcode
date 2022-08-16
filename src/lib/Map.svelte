@@ -1,10 +1,12 @@
 <script>
 	import { onMount } from 'svelte';
 
-	export let index;
+	export let timeIndex;
 	export let coords;
 	export let data;
 	export let times;
+	export let stopCoords;
+	export let stopIndex;
 
 	var boatIcon = L.icon({
 		iconUrl: '/favicon.png',
@@ -13,13 +15,17 @@
 	function getNewPosition(i) {
 		return L.latLng(coords[i][0], coords[i][1]);
 	}
-	const boat = L.marker(getNewPosition(index), { icon: boatIcon });
+	const boat = L.marker(getNewPosition(timeIndex), { icon: boatIcon });
 	var map = null;
 	$: {
-		const pos = getNewPosition(index);
+		const pos = getNewPosition(timeIndex);
 		boat.setLatLng(pos);
 		if (map != null) map.panTo(pos);
 	}
+	var stopMarkers = stopCoords.map((s) => L.marker(s, { opacity: 0.5 }));
+	$: stopMarkers.map((marker, i) =>
+		i == stopIndex ? marker.setOpacity(1.0) : marker.setOpacity(0.5)
+	);
 
 	function loadMap() {
 		map = L.map('map').setView([36.5, -75.0], 5);
@@ -29,6 +35,9 @@
 		}).addTo(map);
 		L.geoJSON(data).addTo(map);
 		boat.addTo(map);
+		for (let stopMarker of stopMarkers) {
+			stopMarker.addTo(map);
+		}
 	}
 	onMount(loadMap);
 
@@ -41,7 +50,7 @@
 	<div id="map" on:click={handleClick} />
 	<span class="time">
 		<h2>
-			{times[index].toDateString()}
+			{times[timeIndex].toDateString()}
 		</h2>
 	</span>
 </div>

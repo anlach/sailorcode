@@ -1,6 +1,6 @@
 export default {
     title: "Hauling Out",
-    latlng: [],
+    latLng: [29.996103198859682, -81.65933174974826],
     date: new Date("1 April, 2022"),
     photos: ["/img/stories/gcs-haul.jpg",
              "/img/stories/gcs-camp.jpg",
