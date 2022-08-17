@@ -1,7 +1,7 @@
 export default {
     title: "",
     latLng: [],
-    date: "",
+    date: new Date(""),
     photos: [],
     alt: [],
     video: null,
