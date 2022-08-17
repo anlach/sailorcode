@@ -4,6 +4,8 @@
 
 - Clickable story balloons
 - Maybe use different buttons for story navigation
+    - Buttons could be below timeline, but mobile is tricky because there 
+      isn't much room. Maybe they can move a little to the right, and still overlap if necessary.
 - Use SVGs for boat icons where possible
 - Smooth transition for story navigation
 - Pan to balloon for story button click, but not for dragging the timeline thumb
