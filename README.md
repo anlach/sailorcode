@@ -1,3 +1,18 @@
+# TODO
+
+## Sail section
+
+- Clickable story balloons
+- Maybe use different buttons for story navigation
+- Use SVGs for boat icons where possible
+- Smooth transition for story navigation
+- Pan to balloon for story button click, but not for dragging the timeline thumb
+
+## Code section
+
+- There should be more examples, but I'm not sure what to add. The
+  sail section seems higher priority.
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
