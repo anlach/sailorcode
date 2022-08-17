@@ -2,20 +2,19 @@
 	export let title, photos, alt, video, text, date;
 
 	let photoIndex = 0;
-	function nextPhoto(e){
+	function nextPhoto(e) {
 		e.stopPropagation();
-		if (photoIndex >= photos.length - 1){
+		if (photoIndex >= photos.length - 1) {
 			photoIndex = 0;
 		} else {
 			photoIndex += 1;
 		}
-	};
+	}
 </script>
 
 <div class="outer">
 	{#if photos.length > 0}
-		<div class="photos"
-				on:click={nextPhoto}>
+		<div class="photos" on:click={nextPhoto}>
 			<img src={photos[photoIndex]} alt={alt[photoIndex]} />
 			<span
 				class="fa-solid fa-chevron-right"
@@ -70,9 +69,11 @@
 		text-decoration: none;
 		transition: color 0.5s;
 	}
-	.photos:hover span {
-		color: rgba(255, 255, 255, 0.7);
-		transition: color 0.5s; 
+	@media (hover: hover) {
+		.photos:hover span {
+			color: rgba(255, 255, 255, 0.7);
+			transition: color 0.5s;
+		}
 	}
 	::-webkit-scrollbar {
 		width: 10px;

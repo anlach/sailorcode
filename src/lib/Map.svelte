@@ -5,8 +5,8 @@
 	export let coords;
 	export let data;
 	export let times;
-	export let stopCoords;
-	export let stopIndex;
+	export let storyCoords;
+	export let storyIndex;
 
 	var boatIcon = L.icon({
 		iconUrl: '/favicon.png',
@@ -20,11 +20,11 @@
 	$: {
 		const pos = getNewPosition(timeIndex);
 		boat.setLatLng(pos);
-		if (map != null) map.panTo(pos);
+		if (map != null) map.panTo(storyCoords[storyIndex]);
 	}
-	var stopMarkers = stopCoords.map((s) => L.marker(s, { opacity: 0.5 }));
+	var stopMarkers = storyCoords.map((s) => L.marker(s, { opacity: 0.5 }));
 	$: stopMarkers.map((marker, i) =>
-		i == stopIndex ? marker.setOpacity(1.0) : marker.setOpacity(0.5)
+		i == storyIndex ? marker.setOpacity(1.0) : marker.setOpacity(0.5)
 	);
 
 	function loadMap() {
