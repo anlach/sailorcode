@@ -20,7 +20,7 @@
 	$: {
 		const pos = getNewPosition(timeIndex);
 		boat.setLatLng(pos);
-		if (map != null) map.panTo(storyCoords[storyIndex]);
+		if (map != null) map.panTo(pos);
 	}
 	var stopMarkers = storyCoords.map((s) => L.marker(s, { opacity: 0.5 }));
 	$: stopMarkers.map((marker, i) =>

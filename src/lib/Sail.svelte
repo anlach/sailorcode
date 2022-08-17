@@ -5,12 +5,14 @@
 	import Timeline from '$lib/Timeline.svelte';
 	import { data } from '$lib/data/sailing-tracks.js';
 	import story1 from '$lib/stories/urist-1.js';
-	import story2 from '$lib/stories/haul-florida.js';
+	import story2 from '$lib/stories/vinalhaven.js';
+	import story3 from '$lib/stories/christmas.js';
+	import story4 from '$lib/stories/haul-florida.js';
 	export let shrink;
 	export let grow;
 
 	// stories are chronologically ordered
-	const stories = [story1, story2];
+	const stories = [story1, story2, story3, story4];
 	let storyIndex = 1;
 	let storyInView = stories[storyIndex];
 
@@ -40,12 +42,14 @@
 		while (story.date > times[i]) i++;
 		let coordIndex = i;
 		if (i > coords.length - 1) coordIndex = coords.length - 1;
+		// coords is used for the boat marker, so we just duplicate whatever
+		// already there instead of using the story location, which
+		// may not happen near the boat.
 		coords = [
 			...coords.slice(0, i),
 			...new Array(20).fill(coords[coordIndex]),
 			...coords.slice(i, coords.length)
 		];
-		console.log("timeslice ", times.slice(coordIndex, times.length), coordIndex, times.length);
 		times = [
 			...times.slice(0, i),
 			...new Array(20).fill(story.date),
@@ -59,7 +63,6 @@
 		//  |---S--+--S---S---S|
 		let stopIndex = storyStops.length - 1;
 		while (timeIndex <= storyStops[stopIndex - 1]) stopIndex--;
-		console.log('new stopindex', stopIndex, 'from', timeIndex);
 		return stopIndex;
 	}
 	$: storyIndex = getStopIndex(timeIndex);

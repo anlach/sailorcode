@@ -2,6 +2,7 @@
 	export let title, photos, alt, video, text, date;
 
 	let photoIndex = 0;
+	$: photoIndex = photos? 0:0;
 	function nextPhoto(e) {
 		e.stopPropagation();
 		if (photoIndex >= photos.length - 1) {
@@ -16,11 +17,13 @@
 	{#if photos.length > 0}
 		<div class="photos" on:click={nextPhoto}>
 			<img src={photos[photoIndex]} alt={alt[photoIndex]} />
-			<span
-				class="fa-solid fa-chevron-right"
-				alt="Next photo"
-				title="Next photo"
-			/>
+			{#if photos.length > 1}
+				<span
+					class="fa-solid fa-chevron-right"
+					alt="Next photo"
+					title="Next photo"
+				/>
+			{/if}
 		</div>
 		<!-- <span class="fa-solid fa-chevron-left"></span> -->
 	{:else}
