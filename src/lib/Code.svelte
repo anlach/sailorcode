@@ -9,17 +9,17 @@
 
 	const projects = [
 		{
-			title: 'JavaScript Calculator',
+			title: 'React Calculator',
 			image: '/img/Calculator.png',
 			url: 'https://codepen.io/anlach/pen/BarKjKX'
 		},
 		{
-			title: 'Quote Generator',
+			title: 'Bootstrap Quote Generator',
 			image: '/img/RandomQuotes.png',
 			url: 'https://codepen.io/anlach/pen/eYMpGrO'
 		},
 		{
-			title: '25 or 6 to 5 Clock',
+			title: 'React 25-5 Clock',
 			image: '/img/25-5-Clock.png',
 			url: 'https://codepen.io/anlach/pen/PoRzLeQ'
 		}

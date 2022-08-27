@@ -34,6 +34,7 @@
 			attribution: '© OpenStreetMap'
 		}).addTo(map);
 		L.geoJSON(data).addTo(map);
+		L.control.scale({'position': 'topleft'}).addTo(map);
 		boat.addTo(map);
 		for (let stopMarker of stopMarkers) {
 			stopMarker.addTo(map);
