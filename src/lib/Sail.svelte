@@ -7,12 +7,13 @@
 	import story1 from '$lib/stories/urist-1.js';
 	import story2 from '$lib/stories/vinalhaven.js';
 	import story3 from '$lib/stories/christmas.js';
+	import story5 from '$lib/stories/dolphins.js';
 	import story4 from '$lib/stories/haul-florida.js';
 	export let shrink;
 	export let grow;
 
 	// stories are chronologically ordered
-	const stories = [story1, story2, story3, story4];
+	const stories = [story1, story2, story3, story5, story4];
 	let storyIndex = 1;
 	let storyInView = stories[storyIndex];
 
