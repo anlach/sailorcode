@@ -2,7 +2,7 @@
 	export let title, photos, alt, video, text, date;
 
 	let photoIndex = 0;
-	$: photoIndex = photos? 0:0;
+	$: photoIndex = photos ? 0 : 0;
 	function nextPhoto(e) {
 		e.stopPropagation();
 		if (photoIndex >= photos.length - 1) {
@@ -27,15 +27,17 @@
 		</div>
 		<!-- <span class="fa-solid fa-chevron-left"></span> -->
 	{:else}
-		<iframe
-			src={'https://www.youtube.com/embed/' +
-				video +
-				'?autoplay=1&origin=http://sailorcode.com'}
-			title="YouTube video player"
-			frameborder="0"
-			allow="accelerometer; autoplay; clipboard-write; gyroscope; picture-in-picture"
-			allowfullscreen
-		/>
+		<div class="video">
+			<iframe
+				src={'https://www.youtube.com/embed/' +
+					video +
+					'?autoplay=1&origin=http://sailorcode.com'}
+				title="YouTube video player"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; gyroscope"
+				allowfullscreen
+			/>
+		</div>
 	{/if}
 	<h2>{title}</h2>
 	<p>{text}</p>
@@ -56,12 +58,17 @@
 	iframe {
 		width: 100%;
 		max-width: 500px;
-		height: auto;
-		align-self: center;
 	}
 	iframe {
-		height: 400px;
-		flex-shrink: 0;
+		position: absolute;
+		top: 0;
+		height: 100%;
+	}
+	.video {
+		width: 100%;
+		padding-top: 56.25%;
+		overflow: hidden;
+		position: relative;
 	}
 	span {
 		position: absolute;
