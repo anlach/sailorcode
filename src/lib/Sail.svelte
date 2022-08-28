@@ -3,6 +3,7 @@
 	import Map from '$lib/Map.svelte';
 	import Story from '$lib/Story.svelte';
 	import Timeline from '$lib/Timeline.svelte';
+	import { timeIndex } from '$lib/stores.js';
 	import { data } from '$lib/data/sailing-tracks.js';
 	import story1 from '$lib/stories/urist-1.js';
 	import story2 from '$lib/stories/vinalhaven.js';
@@ -14,7 +15,7 @@
 
 	// stories are chronologically ordered
 	const stories = [story1, story2, story3, story5, story4];
-	let storyIndex = 1;
+	let storyIndex = stories.length - 1;
 	let storyInView = stories[storyIndex];
 
 	const nCoords = data.features.reduce((previous, current) => {
@@ -58,7 +59,7 @@
 		];
 		storyStops.push(20 + i - 1);
 	}
-	let timeIndex = times.length - 1;
+	timeIndex.set(times.length - 1);
 
 	function getStopIndex(timeIndex) {
 		//  |---S--+--S---S---S|
@@ -66,7 +67,7 @@
 		while (timeIndex <= storyStops[stopIndex - 1]) stopIndex--;
 		return stopIndex;
 	}
-	$: storyIndex = getStopIndex(timeIndex);
+	$: storyIndex = getStopIndex($timeIndex);
 	$: storyInView = stories[storyIndex];
 </script>
 
@@ -96,7 +97,7 @@
 		<div class="pad" in:fade={{ delay: 200 }} out:fade={{ duration: 100 }}>
 			<div class="split">
 				<div class="map-outer">
-					<Map {coords} {timeIndex} {data} {times} {storyCoords} {storyIndex} />
+					<Map {coords} timeIndex={parseInt($timeIndex)} {data} {times} {storyCoords} {storyIndex} />
 				</div>
 				<div class="story-outer">
 					<Story {...storyInView} />
@@ -105,7 +106,6 @@
 		</div>
 		<Timeline
 			max={times.length - 1}
-			bind:index={timeIndex}
 			stops={storyStops}
 			{storyIndex}
 		/>

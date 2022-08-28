@@ -1,35 +1,36 @@
 <script>
 	import { fade } from 'svelte/transition';
-	export let index;
+	import { timeIndex } from '$lib/stores.js';
+
 	export let max;
 	export let stops;
 	export let storyIndex;
 
 	function toStart(e) {
 		e.stopPropagation();
-		index = 0;
+		timeIndex.set(0);
 	}
 
 	function toEnd(e) {
 		e.stopPropagation();
-		index = max;
+		timeIndex.set(max);
 	}
 
 	function back(e) {
 		e.stopPropagation();
 		if (storyIndex < 1) {
-			index = 0;
+			timeIndex.set(0);
 		} else {
-			index = stops[storyIndex - 1];
+			timeIndex.set(stops[storyIndex - 1]);
 		}
 	}
 
 	function advance(e) {
 		e.stopPropagation();
 		if (storyIndex >= stops.length - 1) {
-			index = max;
+			timeIndex.set(max);
 		} else {
-			index = stops[storyIndex + 1];
+			timeIndex.set(stops[storyIndex + 1]);
 		}
 	}
 </script>
@@ -41,7 +42,7 @@
 		type="range"
 		min="0"
 		{max}
-		bind:value={index}
+		bind:value={$timeIndex}
 		id="timeline"
 		on:click={(e) => e.stopPropagation()}
 	/>
