@@ -11,6 +11,41 @@ export default [
     //     text: ""
     // },
     {
+        title: "Building Urist",
+        latLng: [42.65081855326162, -73.76678768458933],
+        date: new Date("1 April, 2018"),
+        photos: ["/img/stories/dink-1.jpg",
+            "/img/stories/dink-2.jpg",
+            "/img/stories/dink-3.jpg",
+            "/img/stories/dink-4.jpg",
+            "/img/stories/dink-5.jpg",
+            "/img/stories/dink-6.jpg",
+            "/img/stories/dink-7.jpg",
+            "/img/stories/dink-8.jpg",
+            "/img/stories/dink-9.jpg",
+            "/img/stories/dink-10.jpg"],
+        alt: ["gluing bulkheads",
+            "wiring the planks together",
+            "filling the laps",
+            "adding the gunnels",
+            "lots of sanding",
+            "cutting in half",
+            "nested",
+            "painted",
+            "testing in the Hudson",
+            "car-topped"],
+        video: null,
+        text: "It started out with an Eastport Nesting Pram kit from \
+               Chesapeake Light Craft. The kit came with machine-cut wood, \
+               copper wire, and epoxy. First, you stitch it all together with \
+               copper wire. Then, add lots of epoxy. Then, cut it in half and \
+               paint. As you can see, it can be done in a bedroom if that's all \
+               you have. There was a lot of sanding involved and it probably \
+               took me over 200 hours to complete. I started out thinking this \
+               would be on a Cape Dory 28, but it ended up fitting alright on the \
+               Shannon 28 between the companionway and the mast."
+    },
+    {
         title: "Sailing Urist",
         latLng: [43.268957570495544, -74.05304187024247],
         date: new Date("1 July, 2020"),
