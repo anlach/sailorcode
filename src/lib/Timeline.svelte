@@ -47,10 +47,10 @@
 		on:click={(e) => e.stopPropagation()}
 	/>
 	<div class="buttons">
-		<span class="fa-solid fa-backward-fast" on:click={toStart} />
-		<span class="fa-solid fa-backward" on:click={back} />
-		<span class="fa-solid fa-forward" on:click={advance} />
-		<span class="fa-solid fa-forward-fast" on:click={toEnd} />
+		<span class="fa-solid fa-arrow-rotate-left" on:click={toStart} />
+		<span class="fa-solid fa-backward-step" on:click={back} />
+		<span class="fa-solid fa-forward-step" on:click={advance} />
+		<span class="fa-solid fa-arrow-rotate-right" on:click={toEnd} />
 	</div>
 </div>
 
