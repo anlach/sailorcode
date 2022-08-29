@@ -136,7 +136,7 @@
 	}
 	.code .textbox {
 		top: 20%;
-		right: 10%;
+		right: 6%;
 		z-index: 1;
 		position: absolute;
 		transition: top 0.5s;

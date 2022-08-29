@@ -11,7 +11,7 @@ export default [
     //     text: ""
     // },
     {
-        title: "Building Urist",
+        title: "Building Urist McDinghy",
         latLng: [42.65081855326162, -73.76678768458933],
         date: new Date("1 April, 2018"),
         photos: ["/img/stories/dink-1.jpg",

@@ -115,12 +115,14 @@
 		width: 100%;
 		height: 100%;
 		position: relative;
-		background-image: url('/img/IMG_4543.JPG');
+		background-image: linear-gradient(to bottom, rgba(6, 0, 53, 0.4), rgba(6, 0, 53, 0.9)), 
+		   url('/img/IMG_4543.JPG');
 		background-position: left;
 		background-size: auto 90vh;
 		background-size: auto 90svh;
 		background-repeat: no-repeat;
-		--text-color: rgb(70, 113, 207);
+		--text-color: rgb(148, 182, 255);
+		--dark-color: rgb(6, 0, 53);
 	}
 	@media screen and (min-device-width: 700px) {
 		.sail {
@@ -130,18 +132,21 @@
 	}
 	.sail .textbox {
 		bottom: 20%;
-		left: 10%;
+		left: 6%;
 		position: absolute;
 		transition: bottom 0.5s;
+		z-index: 5;
 	}
-	.sail .textbox.grow,
+	.sail .textbox.grow,	
 	.sail .textbox.shrink {
 		bottom: 0%;
 		transition: bottom 0.5s;
 	}
 	.sail h1 {
 		color: var(--text-color);
-		text-shadow: 0 0 30px white;
+		text-shadow: 0 0 30px var(--dark-color);
+		z-index: 5;
+		position: relative;
 	}
 	.links {
 		/* position: absolute; */
@@ -156,19 +161,19 @@
 	}
 	.links a {
 		color: var(--text-color);
-		text-decoration: none;
+		text-shadow: 0 0 30px var(--dark-color);
 		margin: 5px 5px;
 	}
 	.pad {
-		padding: 2%;
-		height: 63vh;
-		height: 63svh;
+		padding: 0 2% 2% 2%;
+		height: 65vh;
+		height: 65svh;
 		width: 100vw;
 	}
 	.split {
 		display: flex;
 		height: 100%;
-		box-shadow: 0px 0px 15px 5px rgb(18, 18, 59, 0.7);
+		box-shadow: 2px 2px 15px 0px var(--dark-color);
 	}
 	.map-outer,
 	.story-outer {
