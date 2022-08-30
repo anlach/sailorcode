@@ -107,6 +107,13 @@
 			>
 				<span class="fa-brands fa-codepen" alt="Codepen" title="Codepen" />
 			</a>
+			<a
+				href="https://www.linkedin.com/in/adlacharite/"
+				target="_blank"
+				on:click={(e) => e.stopPropagation()}
+			>
+				<span class="fa-brands fa-linkedin" alt="LinkedIn" title="LinkedIn" />
+			</a>
 		</div>
 	{/if}
 </div>
