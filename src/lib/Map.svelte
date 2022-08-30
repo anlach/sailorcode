@@ -1,13 +1,15 @@
 <script>
 	import { onMount } from 'svelte';
+	import { timeIndex } from '$lib/stores.js';
 
-	export let timeIndex;
 	export let coords;
 	export let data;
 	export let times;
 	export let storyCoords;
 	export let storyIndex;
+	export let storyStops;
 
+	let intTimeIndex = 0;
 	var boatIcon = L.icon({
 		iconUrl: '/favicon.png',
 		iconSize: [36, 36]
@@ -15,14 +17,19 @@
 	function getNewPosition(i) {
 		return L.latLng(coords[i][0], coords[i][1]);
 	}
-	const boat = L.marker(getNewPosition(timeIndex), { icon: boatIcon });
+	const boat = L.marker(getNewPosition(parseInt($timeIndex)), { icon: boatIcon });
 	var map = null;
 	$: {
-		const pos = getNewPosition(timeIndex);
+		const pos = getNewPosition(parseInt($timeIndex));
 		boat.setLatLng(pos);
 		if (map != null) map.panTo(pos);
 	}
-	var stopMarkers = storyCoords.map((s) => L.marker(s, { opacity: 0.5 }));
+	var stopMarkers = []
+	for (let i=0; i<storyStops.length; i++){
+		let marker = L.marker(storyCoords[i], {opacity: 0.5});
+		marker.on('click', ()=>timeIndex.set(storyStops[i]));
+		stopMarkers.push(marker);
+	}
 	$: stopMarkers.map((marker, i) =>
 		i == storyIndex ? marker.setOpacity(1.0) : marker.setOpacity(0.5)
 	);
@@ -51,7 +58,7 @@
 	<div id="map" on:click={handleClick} />
 	<span class="time">
 		<h2>
-			{times[timeIndex].toDateString()}
+			{times[parseInt($timeIndex)].toDateString()}
 		</h2>
 	</span>
 </div>

@@ -92,7 +92,7 @@
 		<div class="pad" in:fade={{ delay: 200 }} out:fade={{ duration: 100 }}>
 			<div class="split">
 				<div class="map-outer">
-					<Map {coords} timeIndex={parseInt($timeIndex)} {data} {times} {storyCoords} {storyIndex} />
+					<Map {coords} {data} {times} {storyCoords} {storyIndex} {storyStops} />
 				</div>
 				<div class="story-outer">
 					<Story {...storyInView} />

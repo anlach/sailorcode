@@ -159,7 +159,7 @@ export default [
     {
         title: "Thanksgiving",
         latLng: [39.38217218556049, -74.42256187662677],
-        date: new Date("25 November, 2021"),
+        date: new Date("26 November, 2021"),
         photos: [
             "/img/stories/a-city-1.jpg",
             "/img/stories/a-city-2.jpg",
