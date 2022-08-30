@@ -92,18 +92,21 @@
 		<div class="pad" in:fade={{ delay: 200 }} out:fade={{ duration: 100 }}>
 			<div class="split">
 				<div class="map-outer">
-					<Map {coords} {data} {times} {storyCoords} {storyIndex} {storyStops} />
+					<Map
+						{coords}
+						{data}
+						{times}
+						{storyCoords}
+						{storyIndex}
+						{storyStops}
+					/>
 				</div>
 				<div class="story-outer">
 					<Story {...storyInView} />
 				</div>
 			</div>
 		</div>
-		<Timeline
-			max={times.length - 1}
-			stops={storyStops}
-			{storyIndex}
-		/>
+		<Timeline max={times.length - 1} stops={storyStops} {storyIndex} />
 	{/if}
 	<div class:shrink class:grow class="textbox">
 		<h1>SAIL</h1>
@@ -115,8 +118,12 @@
 		width: 100%;
 		height: 100%;
 		position: relative;
-		background-image: linear-gradient(to bottom, rgba(6, 0, 53, 0.4), rgba(6, 0, 53, 0.9)), 
-		   url('/img/IMG_4543.JPG');
+		background-image: linear-gradient(
+				to bottom,
+				rgba(6, 0, 53, 0.4),
+				rgba(6, 0, 53, 0.9)
+			),
+			url('/img/IMG_4543.JPG');
 		background-position: left;
 		background-size: auto 90vh;
 		background-size: auto 90svh;
@@ -137,7 +144,7 @@
 		transition: bottom 0.5s;
 		z-index: 5;
 	}
-	.sail .textbox.grow,	
+	.sail .textbox.grow,
 	.sail .textbox.shrink {
 		bottom: 0%;
 		transition: bottom 0.5s;
