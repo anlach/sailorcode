@@ -130,7 +130,7 @@
 		display: flex;
 		flex-direction: column;
 		/* flex-grow: 1; */
-		min-width: 250px;
+		min-width: 238px;
 		flex-shrink: 3;
 	}
 	/* @media screen and (min-width: 1200px) {

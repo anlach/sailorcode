@@ -79,6 +79,7 @@
 		background: url('/favicon.png');
 		cursor: pointer;
 		border: none;
+		box-shadow: none;
 		color: var(--timeline-color);
 	}
 
