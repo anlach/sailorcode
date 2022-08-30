@@ -59,9 +59,24 @@
 		flex-grow: 1;
 		text-align: center;
 	}
-	@media (max-width: 620px) {
+	@media (max-width: 865px) {
 		h2 {
-			font-size: smaller;
+			font-size: 1.2em;
+		}
+	}
+	@media (max-width: 710px) {
+		h2 {
+			font-size: 1em;
+		}
+	}
+	@media (max-width: 600px) {
+		h2 {
+			font-size: 0.7em;
+		}
+	}
+	@media (max-width: 440px) {
+		h2 {
+			font-size: 0.5em;
 		}
 	}
 	.image {

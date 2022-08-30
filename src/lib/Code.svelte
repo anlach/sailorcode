@@ -9,6 +9,11 @@
 
 	const projects = [
 		{
+			title: 'freeCodeCamp Certifications',
+			image: '/img/certifications.png',
+			url: 'https://www.freecodecamp.org/anlach'
+		},
+		{
 			title: 'React Calculator',
 			image: '/img/Calculator.png',
 			url: 'https://codepen.io/anlach/pen/BarKjKX'
