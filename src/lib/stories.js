@@ -71,6 +71,16 @@ export default [
                a bit more of the heeled-over experience."
     },
     {
+        title: "Stonington, Maine",
+        latLng: [44.151026, -68.663153 ],
+        date: new Date("7:00 4 September, 2021"),
+        photos: [],
+        alt: [],
+        video: "ROFvmjI3Nbw",
+        text: "On my way out to Mount Desert Island, I passed the \
+               picturesque town of Stonington on Deer Isle."
+    },
+    {
         title: "Vinalhaven, Maine",
         latLng: [44.08919861878901, -68.88378227326321],
         date: new Date("25 October, 2021"),
