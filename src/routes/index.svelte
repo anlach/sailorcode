@@ -31,7 +31,7 @@
 <div id="sail-box" class:growSail class:shrinkSail on:click={sailClick}>
 	<Sail grow={growSail} shrink={shrinkSail} />
 </div>
-<div id="code-box" class:growSail class:shrinkSail on:click={codeClick}>
+<div id="code-box" class:growSail class:shrinkSail on:pointerup={codeClick}>
 	<Code grow={shrinkSail} shrink={growSail} />
 </div>
 

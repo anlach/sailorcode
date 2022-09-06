@@ -36,18 +36,52 @@
 	let iProj = 0;
 	// This resets iProj to 0 when grow changes
 	$: iProj = grow ? 0 : -1;
-	function projClickHandler(i) {
-		const handler = (e) => {
-			// console.log("clicked project", i);
+
+	var start = {};
+	var end = {};
+	var tracking = false;
+	var thresholdTime = 500;
+	var thresholdDistance = 100;
+	const gestureStart = (i) =>
+		function (e) {
 			e.stopPropagation();
-			if (i == iProj) {
-				window.open(projects[i].url, '_blank');
-			} else {
-				iProj = i;
-			}
+			e.target.setPointerCapture(e.pointerId);
+			tracking = true;
+			start.t = new Date().getTime();
+			start.x = e.clientX;
+			end.x = e.clientX;
+			start.i = i;
 		};
-		return handler;
-	}
+	const gestureMove = function (e) {
+		if (tracking) {
+			e.preventDefault();
+			end.x = e.clientX;
+		}
+	};
+	const gestureEnd = function (e) {
+		e.stopPropagation();
+		if (tracking) {
+			tracking = false;
+			var now = new Date().getTime();
+			var deltaTime = now - start.t;
+			var deltaX = end.x - start.x;
+			if (deltaTime > thresholdTime) {
+				return;
+			} else {
+				if (deltaX > thresholdDistance) {
+					if (iProj > 0) iProj -= 1;
+				} else if (-deltaX > thresholdDistance) {
+					if (iProj < projects.length - 1) iProj += 1;
+				} else {
+					if (start.i == iProj) {
+						window.open(projects[start.i].url, '_blank');
+					} else {
+						iProj = start.i;
+					}
+				}
+			}
+		}
+	};
 </script>
 
 <div class="code">
@@ -76,7 +110,10 @@
 						pos={i - iProj}
 						title={projects[i].title}
 						image={projects[i].image}
-						on:click={projClickHandler(i)}
+						on:pointerdown={gestureStart(i)}
+						on:pointermove={gestureMove}
+						on:pointerup={gestureEnd}
+						on:pointercancel={gestureEnd}
 					/>
 				{/each}
 			</div>
@@ -96,7 +133,7 @@
 			<a
 				href="https://www.github.com/anlach"
 				target="_blank"
-				on:click={(e) => e.stopPropagation()}
+				on:click|stopPropagation
 			>
 				<span class="fa-brands fa-github" alt="Github" title="Github" />
 			</a>

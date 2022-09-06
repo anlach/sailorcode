@@ -22,7 +22,14 @@
 </script>
 
 <!-- <span style="color: white">{getTransform(pos)}</span> -->
-<div class="container" style="transform: {getTransform(pos)};" on:click>
+<div
+	class="container"
+	style="transform: {getTransform(pos)};"
+	on:pointerdown
+	on:pointerup
+	on:pointermove
+	on:pointercancel
+>
 	<div class="black">
 		<div class="image" style="background-image: url({image});" />
 		<h2>{title}</h2>
