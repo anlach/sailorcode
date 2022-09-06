@@ -58,8 +58,10 @@
 		transition: transform 0.5s;
 		z-index: 10;
 	}
-	.container:hover {
-		box-shadow: 0 0 20px 15px green;
+	@media (hover: hover) {
+		.container:hover {
+			box-shadow: 0 0 20px 15px green;
+		}
 	}
 	h2 {
 		color: var(--text-color);
