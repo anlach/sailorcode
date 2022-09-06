@@ -37,14 +37,14 @@
 	// This resets iProj to 0 when grow changes
 	$: iProj = grow ? 0 : -1;
 
-	var start = {};
-	var end = {};
-	var tracking = false;
-	var thresholdTime = 500;
-	var thresholdDistance = 8;
+	let start = {};
+	let end = {};
+	let swipeTimeStamp = 0;
+	let tracking = false;
+	let thresholdTime = 500;
+	let thresholdDistance = 8;
 	const gestureStart = (i) =>
 		function (e) {
-			console.log('start');
 			e.stopPropagation();
 			e.target.setPointerCapture(e.pointerId);
 			tracking = true;
@@ -64,7 +64,7 @@
 		}
 	};
 	const gestureEnd = function (e) {
-		console.log('end');
+		swipeTimeStamp = e.timeStamp;
 		e.stopPropagation();
 		if (tracking) {
 			tracking = false;
@@ -75,7 +75,6 @@
 			} else {
 				var deltaX = end.x - start.x;
 				var deltaY = end.y - start.y;
-				console.log('dx', deltaX);
 				if (deltaX > thresholdDistance) {
 					if (iProj > 0) iProj -= 1;
 				} else if (-deltaX > thresholdDistance) {
@@ -83,7 +82,6 @@
 				} else if (Math.abs(deltaY) > thresholdDistance) {
 					return;
 				} else {
-					console.log('else');
 					if (start.i == iProj) {
 						window.open(projects[start.i].url, '_blank');
 					} else {
@@ -93,9 +91,14 @@
 			}
 		}
 	};
+
+	function stopIfSwipe(e){
+		// This only seems to be a problem in FireFox
+		if (e.timeStamp == swipeTimeStamp) e.stopPropagation();
+	}
 </script>
 
-<div class="code">
+<div class="code" on:click={stopIfSwipe}>
 	<!-- <span>Some text here</span> -->
 	<div class:shrink class:grow class="textbox">
 		<h1>CODE</h1>
@@ -133,7 +136,7 @@
 			<a
 				href="https://www.freecodecamp.org/anlach"
 				target="_blank"
-				on:pointerup|stopPropagation
+				on:click|stopPropagation
 			>
 				<span
 					class="fa-brands fa-free-code-camp"
@@ -144,21 +147,21 @@
 			<a
 				href="https://www.github.com/anlach"
 				target="_blank"
-				on:pointerup|stopPropagation
+				on:click|stopPropagation
 			>
 				<span class="fa-brands fa-github" alt="Github" title="Github" />
 			</a>
 			<a
 				href="https://codepen.io/anlach"
 				target="_blank"
-				on:pointerup|stopPropagation
+				on:click|stopPropagation
 			>
 				<span class="fa-brands fa-codepen" alt="Codepen" title="Codepen" />
 			</a>
 			<a
 				href="https://www.linkedin.com/in/adlacharite/"
 				target="_blank"
-				on:pointerup|stopPropagation
+				on:click|stopPropagation
 			>
 				<span class="fa-brands fa-linkedin" alt="LinkedIn" title="LinkedIn" />
 			</a>

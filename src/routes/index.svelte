@@ -15,7 +15,8 @@
 			growSail = true;
 		}
 	}
-	function codeClick() {
+	function codeClick(e) {
+		console.log('click on code', e);
 		if (growSail) {
 			shrinkSail = true;
 			growSail = false;
@@ -31,7 +32,7 @@
 <div id="sail-box" class:growSail class:shrinkSail on:click={sailClick}>
 	<Sail grow={growSail} shrink={shrinkSail} />
 </div>
-<div id="code-box" class:growSail class:shrinkSail on:pointerup={codeClick}>
+<div id="code-box" class:growSail class:shrinkSail on:click={codeClick}>
 	<Code grow={shrinkSail} shrink={growSail} />
 </div>
 

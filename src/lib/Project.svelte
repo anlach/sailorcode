@@ -29,6 +29,7 @@
 	on:pointerup
 	on:pointermove
 	on:pointercancel
+	on:click|stopPropagation
 >
 	<div class="black">
 		<div class="image" style="background-image: url({image});" />
