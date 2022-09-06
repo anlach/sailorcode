@@ -41,38 +41,49 @@
 	var end = {};
 	var tracking = false;
 	var thresholdTime = 500;
-	var thresholdDistance = 100;
+	var thresholdDistance = 8;
 	const gestureStart = (i) =>
 		function (e) {
+			console.log('start');
 			e.stopPropagation();
 			e.target.setPointerCapture(e.pointerId);
 			tracking = true;
 			start.t = new Date().getTime();
 			start.x = e.clientX;
+			start.y = e.clientY;
 			end.x = e.clientX;
+			end.y = e.clientY;
 			start.i = i;
 		};
 	const gestureMove = function (e) {
 		if (tracking) {
 			e.preventDefault();
+			e.stopPropagation();
 			end.x = e.clientX;
+			end.y = e.clientY;
 		}
 	};
 	const gestureEnd = function (e) {
+		console.log('end');
 		e.stopPropagation();
 		if (tracking) {
 			tracking = false;
 			var now = new Date().getTime();
 			var deltaTime = now - start.t;
-			var deltaX = end.x - start.x;
 			if (deltaTime > thresholdTime) {
 				return;
 			} else {
+				var deltaX = end.x - start.x;
+				var deltaY = end.y - start.y;
+				console.log('dx', deltaX);
 				if (deltaX > thresholdDistance) {
 					if (iProj > 0) iProj -= 1;
 				} else if (-deltaX > thresholdDistance) {
 					if (iProj < projects.length - 1) iProj += 1;
+				} else if (Math.abs(deltaY) > thresholdDistance) {
+					return;
 				} else {
+					console.log('else');
 					if (start.i == iProj) {
 						window.open(projects[start.i].url, '_blank');
 					} else {
@@ -122,7 +133,7 @@
 			<a
 				href="https://www.freecodecamp.org/anlach"
 				target="_blank"
-				on:click={(e) => e.stopPropagation()}
+				on:pointerup|stopPropagation
 			>
 				<span
 					class="fa-brands fa-free-code-camp"
@@ -133,21 +144,21 @@
 			<a
 				href="https://www.github.com/anlach"
 				target="_blank"
-				on:click|stopPropagation
+				on:pointerup|stopPropagation
 			>
 				<span class="fa-brands fa-github" alt="Github" title="Github" />
 			</a>
 			<a
 				href="https://codepen.io/anlach"
 				target="_blank"
-				on:click={(e) => e.stopPropagation()}
+				on:pointerup|stopPropagation
 			>
 				<span class="fa-brands fa-codepen" alt="Codepen" title="Codepen" />
 			</a>
 			<a
 				href="https://www.linkedin.com/in/adlacharite/"
 				target="_blank"
-				on:click={(e) => e.stopPropagation()}
+				on:pointerup|stopPropagation
 			>
 				<span class="fa-brands fa-linkedin" alt="LinkedIn" title="LinkedIn" />
 			</a>
