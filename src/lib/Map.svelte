@@ -17,17 +17,19 @@
 	function getNewPosition(i) {
 		return L.latLng(coords[i][0], coords[i][1]);
 	}
-	const boat = L.marker(getNewPosition(parseInt($timeIndex)), { icon: boatIcon });
+	const boat = L.marker(getNewPosition(parseInt($timeIndex)), {
+		icon: boatIcon
+	});
 	var map = null;
 	$: {
 		const pos = getNewPosition(parseInt($timeIndex));
 		boat.setLatLng(pos);
 		if (map != null) map.panTo(pos);
 	}
-	var stopMarkers = []
-	for (let i=0; i<storyStops.length; i++){
-		let marker = L.marker(storyCoords[i], {opacity: 0.5});
-		marker.on('click', ()=>timeIndex.set(storyStops[i]));
+	var stopMarkers = [];
+	for (let i = 0; i < storyStops.length; i++) {
+		let marker = L.marker(storyCoords[i], { opacity: 0.5 });
+		marker.on('click', () => timeIndex.set(storyStops[i]));
 		stopMarkers.push(marker);
 	}
 	$: stopMarkers.map((marker, i) =>
@@ -41,21 +43,17 @@
 			attribution: '© OpenStreetMap'
 		}).addTo(map);
 		L.geoJSON(data).addTo(map);
-		L.control.scale({'position': 'topleft'}).addTo(map);
+		L.control.scale({ position: 'topleft' }).addTo(map);
 		boat.addTo(map);
 		for (let stopMarker of stopMarkers) {
 			stopMarker.addTo(map);
 		}
 	}
 	onMount(loadMap);
-
-	function handleClick(event) {
-		event.stopPropagation();
-	}
 </script>
 
 <div class="outer">
-	<div id="map" on:click={handleClick} />
+	<div id="map" />
 	<span class="time">
 		<h2>
 			{times[parseInt($timeIndex)].toDateString()}

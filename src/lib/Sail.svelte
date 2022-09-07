@@ -89,7 +89,15 @@
 			</a>
 		</div>
 
-		<div class="pad" in:fade={{ delay: 200 }} out:fade={{ duration: 100 }}>
+		<div
+			class="pad"
+			in:fade={{ delay: 200 }}
+			out:fade={{ duration: 100 }}
+			on:click|stopPropagation
+			on:pointerdown|stopPropagation
+			on:pointerup|stopPropagation
+			on:pointermove|stopPropagation
+		>
 			<div class="split">
 				<div class="map-outer">
 					<Map

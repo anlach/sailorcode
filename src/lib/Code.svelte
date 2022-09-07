@@ -45,7 +45,6 @@
 	let thresholdDistance = 8;
 	const gestureStart = (i) =>
 		function (e) {
-			e.stopPropagation();
 			e.target.setPointerCapture(e.pointerId);
 			tracking = true;
 			start.t = new Date().getTime();
@@ -58,14 +57,12 @@
 	const gestureMove = function (e) {
 		if (tracking) {
 			e.preventDefault();
-			e.stopPropagation();
 			end.x = e.clientX;
 			end.y = e.clientY;
 		}
 	};
 	const gestureEnd = function (e) {
 		swipeTimeStamp = e.timeStamp;
-		e.stopPropagation();
 		if (tracking) {
 			tracking = false;
 			var now = new Date().getTime();

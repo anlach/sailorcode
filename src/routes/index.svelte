@@ -15,8 +15,7 @@
 			growSail = true;
 		}
 	}
-	function codeClick(e) {
-		console.log('click on code', e);
+	function codeClick() {
 		if (growSail) {
 			shrinkSail = true;
 			growSail = false;
@@ -26,14 +25,94 @@
 			shrinkSail = true;
 		}
 	}
+
+	let start = {};
+	let end = {};
+	let swipeTimeStamp = 0;
+	let tracking = false;
+	let thresholdTime = 300;
+	let thresholdDistance = 10;
+	const gestureStart = function (e) {
+		console.log('start');
+		e.target.setPointerCapture(e.pointerId);
+		tracking = true;
+		start.t = new Date().getTime();
+		start.x = e.clientX;
+		start.y = e.clientY;
+		end.x = e.clientX;
+		end.y = e.clientY;
+	};
+	const gestureMove = function (e) {
+		if (tracking) {
+			end.x = e.clientX;
+			end.y = e.clientY;
+		}
+	};
+	const gestureEnd = function (e) {
+		console.log('end');
+		if (tracking) {
+			tracking = false;
+			var now = new Date().getTime();
+			var deltaTime = now - start.t;
+			console.log(
+				'deltaTime',
+				deltaTime,
+				thresholdTime,
+				deltaTime > thresholdTime
+			);
+			if (deltaTime > thresholdTime) {
+				return;
+			} else {
+				var deltaX = end.x - start.x;
+				var deltaY = end.y - start.y;
+				console.log('deltax, y', deltaX, deltaY);
+				if (Math.abs(deltaY) > Math.abs(deltaX)) {
+					if (deltaY > thresholdDistance) {
+						console.log('sail click by swipe');
+						swipeTimeStamp = e.timeStamp;
+						sailClick();
+
+						// keep mobile address bar from expanding again
+						e.preventDefault();
+					} else if (-deltaY > thresholdDistance) {
+						console.log('code click by swipe');
+						swipeTimeStamp = e.timeStamp;
+						codeClick();
+					}
+				}
+			}
+		}
+	};
+	const clickIfNotSwipe = (f) => (e) => {
+		// This only seems to be a problem in FireFox
+		console.log('click handler', f, e.timeStamp, swipeTimeStamp);
+		if (e.timeStamp != swipeTimeStamp) f();
+	};
 </script>
 
 <!-- style:height={height} -->
-<div id="sail-box" class:growSail class:shrinkSail on:click={sailClick}>
-	<Sail grow={growSail} shrink={shrinkSail} />
-</div>
-<div id="code-box" class:growSail class:shrinkSail on:click={codeClick}>
-	<Code grow={shrinkSail} shrink={growSail} />
+<div
+	on:pointerdown={gestureStart}
+	on:pointermove={gestureMove}
+	on:pointerup={gestureEnd}
+	on:pointercancel={gestureEnd}
+>
+	<div
+		id="sail-box"
+		class:growSail
+		class:shrinkSail
+		on:click={clickIfNotSwipe(sailClick)}
+	>
+		<Sail grow={growSail} shrink={shrinkSail} />
+	</div>
+	<div
+		id="code-box"
+		class:growSail
+		class:shrinkSail
+		on:click={clickIfNotSwipe(codeClick)}
+	>
+		<Code grow={shrinkSail} shrink={growSail} />
+	</div>
 </div>
 
 <style>
