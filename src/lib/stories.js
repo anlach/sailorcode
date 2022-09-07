@@ -4,7 +4,7 @@ export default [
     // {
     //     title: "",
     //     latLng: [],
-    //     date: new Date(""),
+    //     date: new Date("2021-04-01T00:00:00Z"),
     //     photos: [],
     //     alt: [],
     //     video: null,
@@ -13,7 +13,7 @@ export default [
     {
         title: "Building Urist McDinghy",
         latLng: [42.65081855326162, -73.76678768458933],
-        date: new Date("1 April, 2018"),
+        date: new Date("2018-04-01T00:00:00Z"),
         photos: ["/img/stories/dink-1.jpg",
             "/img/stories/dink-2.jpg",
             "/img/stories/dink-3.jpg",
@@ -49,7 +49,7 @@ export default [
     {
         title: "Sailing Urist",
         latLng: [43.268957570495544, -74.05304187024247],
-        date: new Date("1 July, 2020"),
+        date: new Date("2020-07-01T00:00:00Z"),
         photos: [],
         alt: [],
         video: "oyqBjDpv3eU",
@@ -59,7 +59,7 @@ export default [
     {
         title: "Rockland, Maine",
         latLng: [44.10632108684309, -69.02477918846719],
-        date: new Date("28 August, 2021"),
+        date: new Date("2021-08-28T00:00:00Z"),
         photos: [
             "/img/stories/rockland-1.jpg",
         ],
@@ -73,7 +73,7 @@ export default [
     {
         title: "Stonington, Maine",
         latLng: [44.151026, -68.663153 ],
-        date: new Date("7:00 4 September, 2021"),
+        date: new Date("2021-09-04T07:00:00Z"),
         photos: [],
         alt: [],
         video: "ROFvmjI3Nbw",
@@ -83,7 +83,7 @@ export default [
     {
         title: "Vinalhaven, Maine",
         latLng: [44.08919861878901, -68.88378227326321],
-        date: new Date("25 October, 2021"),
+        date: new Date("2021-10-25T00:00:00Z"),
         photos: ["/img/stories/vinalhaven-sunset.jpg",
             "/img/stories/vinalhaven-wood.jpg",
             "/img/stories/vinalhaven-fire.jpg"],
@@ -98,7 +98,7 @@ export default [
     {
         title: "Rockport Harbor, Massachusetts",
         latLng: [42.6589350318447, -70.61421773240487],
-        date: new Date("10 November, 2021"),
+        date: new Date("2021-11-10T00:00:00Z"),
         photos: [
             "/img/stories/rockport-1.jpg",
             "/img/stories/rockport-2.jpg",
@@ -119,7 +119,7 @@ export default [
         latLng: [
             41.03839288001135, -73.54480907897373
         ],
-        date: new Date("19 November, 2021"),
+        date: new Date("2021-11-19T00:00:00Z"),
         photos: [
             "/img/stories/stamford-1.jpg",
             "/img/stories/stamford-2.jpg",
@@ -142,7 +142,7 @@ export default [
     {
         title: "New York City",
         latLng: [40.70317005117716, -74.03857043981465],
-        date: new Date("20 November, 2021"),
+        date: new Date("2021-11-20T00:00:00Z"),
         photos: [
             "/img/stories/liberty-0.jpg",
             "/img/stories/liberty-1.jpg",
@@ -169,7 +169,7 @@ export default [
     {
         title: "Thanksgiving",
         latLng: [39.38217218556049, -74.42256187662677],
-        date: new Date("26 November, 2021"),
+        date: new Date("2021-11-26T00:00:00Z"),
         photos: [
             "/img/stories/a-city-1.jpg",
             "/img/stories/a-city-2.jpg",
@@ -191,7 +191,7 @@ export default [
     {
         title: "Christmas Lights",
         latLng: [37.024078718790186, -76.34191804918115],
-        date: new Date("6 December, 2021"),
+        date: new Date("2021-12-06T00:00:00Z"),
         photos: ["/img/stories/christmas.jpg",
             "/img/stories/hampton-1.jpg",
             "/img/stories/hampton-morgan.jpg"],
@@ -207,7 +207,7 @@ export default [
     {
         title: "Atlantic Dolphins",
         latLng: [30.875077281147682, -80.59107544240848],
-        date: new Date("27 February 2022"),
+        date: new Date("2022-02-27T00:00:00Z"),
         photos: [],
         alt: [],
         video: "WAAUHPS5R5A",
@@ -222,7 +222,7 @@ export default [
     {
         title: "Hauling Out",
         latLng: [29.996103198859682, -81.65933174974826],
-        date: new Date("7 April, 2022"),
+        date: new Date("2022-04-07T00:00:00Z"),
         photos: ["/img/stories/gcs-haul.jpg",
             "/img/stories/gcs-camp.jpg",
             "/img/stories/gcs-oars.jpg",
