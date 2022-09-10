@@ -39,11 +39,13 @@
 {#if !(growSail || shrinkSail)}
 	<div transition:fade={{duration: 200}}>
 		<span
+			on:click={sailClick}
 			class="top hint fa-solid fa-circle-down"
 			alt="Adventure Page"
 			title="Adventure Page"
 		/>
 		<span
+			on:click={codeClick}
 			class="bottom hint fa-solid fa-circle-up"
 			alt="Portfolio"
 			title="Portfolio"
