@@ -1,4 +1,5 @@
 <script>
+	import { fade } from 'svelte/transition';
 	import Sail from '$lib/Sail.svelte';
 	import Code from '$lib/Code.svelte';
 
@@ -35,6 +36,20 @@
 <div id="code-box" class:growSail class:shrinkSail on:click={codeClick}>
 	<Code grow={shrinkSail} shrink={growSail} />
 </div>
+{#if !(growSail || shrinkSail)}
+	<div transition:fade={{duration: 200}}>
+		<span
+			class="top hint fa-solid fa-circle-down"
+			alt="Adventure Page"
+			title="Adventure Page"
+		/>
+		<span
+			class="bottom hint fa-solid fa-circle-up"
+			alt="Portfolio"
+			title="Portfolio"
+		/>
+	</div>
+{/if}
 
 <style>
 	#sail-box {
@@ -71,5 +86,31 @@
 		height: 90vh;
 		height: 90svh;
 		transition: height 0.5s;
+	}
+
+	.hint {
+		font-size: 5rem;
+		left: calc(50% - 2.5rem);
+		position: absolute;
+		color: white;
+		opacity: 0;
+		animation: hint 5s ease-in-out 1s infinite;
+	}
+	.hint.top {
+		top: calc(25% - 2.5rem);
+	}
+	.hint.bottom {
+		top: calc(75% - 2.5rem);
+	}
+	@keyframes hint {
+		from {
+			opacity: 0;
+		}
+		50% {
+			opacity: 0.1;
+		}
+		to {
+			opacity: 0;
+		}
 	}
 </style>
