@@ -97,10 +97,12 @@
 		animation: hint 5s ease-in-out 1s infinite;
 	}
 	.hint.top {
-		top: calc(25% - 2.5rem);
+		top: calc(25vh - 2.5rem);
+		top: calc(25svh - 2.5rem);
 	}
 	.hint.bottom {
-		top: calc(75% - 2.5rem);
+		top: calc(75vh - 2.5rem);
+		top: calc(75svh - 2.5rem);
 	}
 	@keyframes hint {
 		from {
