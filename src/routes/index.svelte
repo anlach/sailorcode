@@ -32,26 +32,30 @@
 <!-- style:height={height} -->
 <div id="sail-box" class:growSail class:shrinkSail on:click={sailClick}>
 	<Sail grow={growSail} shrink={shrinkSail} />
+	{#if !(growSail || shrinkSail)}
+		<div class ="hint-box" transition:fade={{ duration: 200 }}>
+			<span
+				on:click={sailClick}
+				class="hint"
+				alt="Adventure Page"
+				title="Adventure Page">Click Here for Adventure</span
+			>
+		</div>
+	{/if}
 </div>
 <div id="code-box" class:growSail class:shrinkSail on:click={codeClick}>
 	<Code grow={shrinkSail} shrink={growSail} />
+	{#if !(growSail || shrinkSail)}
+		<div class="hint-box" transition:fade={{ duration: 200 }}>
+			<span
+				on:click={codeClick}
+				class="hint"
+				alt="Portfolio"
+				title="Portfolio">Click Here for Portfolio</span
+			>
+		</div>
+	{/if}
 </div>
-{#if !(growSail || shrinkSail)}
-	<div transition:fade={{duration: 200}}>
-		<span
-			on:click={sailClick}
-			class="top hint fa-solid fa-circle-down"
-			alt="Adventure Page"
-			title="Adventure Page"
-		/>
-		<span
-			on:click={codeClick}
-			class="bottom hint fa-solid fa-circle-up"
-			alt="Portfolio"
-			title="Portfolio"
-		/>
-	</div>
-{/if}
 
 <style>
 	#sail-box {
@@ -90,21 +94,22 @@
 		transition: height 0.5s;
 	}
 
-	.hint {
-		font-size: 5rem;
-		left: calc(50% - 2.5rem);
+	.hint-box{
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 		position: absolute;
+		top: 0;
+	}
+	.hint {
+		font-size: 2rem;
+		text-align: center;
+		/* left: calc(50% - 2.5rem); */
 		color: white;
 		opacity: 0;
 		animation: hint 5s ease-in-out 1s infinite;
-	}
-	.hint.top {
-		top: calc(25vh - 2.5rem);
-		top: calc(25svh - 2.5rem);
-	}
-	.hint.bottom {
-		top: calc(75vh - 2.5rem);
-		top: calc(75svh - 2.5rem);
 	}
 	@keyframes hint {
 		from {
