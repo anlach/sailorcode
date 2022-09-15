@@ -19,15 +19,40 @@
 			url: 'https://codepen.io/anlach/pen/BarKjKX'
 		},
 		{
-			title: 'Bootstrap Quote Generator',
-			image: '/img/RandomQuotes.png',
-			url: 'https://codepen.io/anlach/pen/eYMpGrO'
+			title: 'Exercise Tracker API',
+			image: '/img/Exercise%20Tracker%20freeCodeCamp.png',
+			url: 'https://boilerplate-project-exercisetracker.anlach.repl.co/'
 		},
 		{
 			title: 'React 25-5 Clock',
 			image: '/img/25-5-Clock.png',
 			url: 'https://codepen.io/anlach/pen/PoRzLeQ'
-		}
+		},
+		{
+			title: 'URL Shortener Microservice API',
+			image: '/img/URL%20Shortener%20Microservice%20freeCodeCamp.png',
+			url: 'https://project-urlshortener.anlach.repl.co/'
+		},
+		{
+			title: 'GCP-hosted Header Parser API',
+			image: '/img/Request%20Header%20Parser.png',
+			url: 'https://project-headerparser-mjcp36gvla-uw.a.run.app/'
+		},
+		{
+			title: 'Bootstrap Quote Generator',
+			image: '/img/RandomQuotes.png',
+			url: 'https://codepen.io/anlach/pen/eYMpGrO'
+		},
+		{
+			title: 'Timestamp Microservice API',
+			image: '/img/Timestamp%20Microservice%20freeCodeCamp.png',
+			url: 'https://boilerplate-project-timestamp.anlach.repl.co/'
+		},
+		{
+			title: 'File Metadata API',
+			image: '/img/File%20Metadata.png',
+			url: 'https://boilerplate-project-filemetadata.anlach.repl.co/'
+		},
 	];
 	const createProjects = new Array(projects.length)
 		.fill(0)
