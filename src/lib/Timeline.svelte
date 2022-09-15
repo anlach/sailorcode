@@ -1,5 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition';
+	import { onDestroy, onMount } from 'svelte';
 	import { timeIndex } from '$lib/stores.js';
 
 	export let max;
@@ -33,6 +34,20 @@
 			timeIndex.set(stops[storyIndex + 1]);
 		}
 	}
+
+	function handleArrow(e) {
+		if (e.key == 'ArrowRight') {
+			advance(e);
+		} else if (e.key == 'ArrowLeft') {
+			back(e);
+		}
+	}
+	onMount(async () => {
+		document.addEventListener('keydown', handleArrow);
+	});
+	onDestroy(async () => {
+		document.removeEventListener('keydown', handleArrow);
+	});
 </script>
 
 <div class="outer" in:fade={{ delay: 200 }} out:fade={{ duration: 100 }}>

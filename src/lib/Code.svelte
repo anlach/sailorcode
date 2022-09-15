@@ -3,6 +3,7 @@
 	import Project from './Project.svelte';
 	import { blur, scale, fly } from 'svelte/transition';
 	import { cubicInOut } from 'svelte/easing';
+	import { onMount, onDestroy } from 'svelte';
 
 	export let shrink;
 	export let grow;
@@ -49,10 +50,15 @@
 			url: 'https://boilerplate-project-timestamp.anlach.repl.co/'
 		},
 		{
+			title: 'React Drum Machine',
+			image: '/img/Drum_Machine.png',
+			url: 'https://codepen.io/anlach/pen/xxWZrRg?editors=1111'
+		},
+		{
 			title: 'File Metadata API',
 			image: '/img/File%20Metadata.png',
 			url: 'https://boilerplate-project-filemetadata.anlach.repl.co/'
-		},
+		}
 	];
 	const createProjects = new Array(projects.length)
 		.fill(0)
@@ -117,10 +123,24 @@
 		}
 	};
 
-	function stopIfSwipe(e){
+	function stopIfSwipe(e) {
 		// This only seems to be a problem in FireFox
 		if (e.timeStamp == swipeTimeStamp) e.stopPropagation();
 	}
+	function handleArrow(e) {
+		if (grow) {
+			if (e.key == 'ArrowRight') {
+				if (iProj < projects.length - 1) iProj += 1;
+			} else if (e.key == 'ArrowLeft') {
+				if (iProj > 0) iProj -= 1;
+			} else if (e.key == 'Enter') {
+				window.open(projects[iProj].url, '_blank');
+			}
+		}
+	}
+	onMount( async () => {
+		document.addEventListener('keydown', handleArrow);
+	});
 </script>
 
 <div class="code" on:click={stopIfSwipe}>
