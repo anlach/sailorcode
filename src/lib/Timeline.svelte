@@ -79,8 +79,8 @@
 		height: 15px;
 		opacity: 0.8;
 		transition: opacity 0.3s;
-		box-shadow: 0 0 15px 10px rgba(186, 216, 255, 0.856);
-		margin: 10px 0;
+		box-shadow: 0 0 5px 5px rgba(186, 216, 255, 0.856);
+		margin: 0 0;
 		color: var(--timeline-color);
 	}
 	input:hover {
@@ -97,7 +97,6 @@
 		box-shadow: none;
 		color: var(--timeline-color);
 	}
-
 	input::-moz-range-thumb {
 		width: 32px;
 		height: 32px;
@@ -108,14 +107,12 @@
 	}
 	.buttons {
 		position: absolute;
-		top: 22px;
-		/* top: 0; */
-		/* right: 0; */
-		/* left: 40%; */
 		right: 0;
+		margin: -2px 0;
 	}
 	span {
-		font-size: 2rem;
+		font-size: 8vh;
+		font-size: 8svh;
 		color: var(--timeline-color);
 		opacity: 0.7;
 		transition: opacity 0.3s;
@@ -124,6 +121,30 @@
 		text-shadow: 0 -2px 15px rgba(51, 83, 134, 0.856);
 		z-index: 10;
 		position: relative;
+	}
+	@media (max-height: 525px) {
+		input {
+			height: 10px;
+		}
+		input::-webkit-slider-thumb {
+			margin: -5px;
+		}
+		input::-moz-range-thumb {
+			margin: -5px;
+		}
+		.buttons {
+			margin: -10px 0;
+		}
+		span {
+			font-size: 6vh;
+			font-size: 6svh;
+		}
+	}
+	@media (max-width: 400px) {
+		span {
+			font-size: 6vh;
+			font-size: 6svh;
+		}
 	}
 	@media (hover: hover) {
 		span:hover {

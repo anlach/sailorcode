@@ -164,7 +164,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		font-size: 3rem;
+		font-size: 8vh;
+		font-size: 8svh;
 	}
 	.links a {
 		color: var(--text-color);
@@ -172,7 +173,7 @@
 		margin: 5px 5px;
 	}
 	.pad {
-		padding: 0 2% 2% 2%;
+		padding: 0 2% 1% 2%;
 		height: 65vh;
 		height: 65svh;
 		width: 100vw;

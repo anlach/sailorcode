@@ -235,7 +235,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		font-size: 3rem;
+		font-size: 8vh;
+		font-size: 8svh;
 	}
 	.links a {
 		color: var(--text-color);
