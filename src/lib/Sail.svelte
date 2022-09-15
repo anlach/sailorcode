@@ -131,7 +131,13 @@
 		--text-color: rgb(148, 182, 255);
 		--dark-color: rgb(6, 0, 53);
 	}
-	@media screen and (min-device-width: 700px) {
+	@media (min-width: 700px) {
+		.sail {
+			background-size: 100vw 90vh;
+			background-size: 100vw 90svh;
+		}
+	}
+	@media (max-width: 700px) and (max-height: 520px) {
 		.sail {
 			background-size: 100vw 90vh;
 			background-size: 100vw 90svh;
