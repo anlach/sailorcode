@@ -38,7 +38,7 @@
 				on:click={sailClick}
 				class="hint"
 				alt="Adventure Page"
-				title="Adventure Page">Click Here for Adventure</span
+				title="Adventure Page">Click Up Here for Adventure</span
 			>
 		</div>
 	{/if}
@@ -51,7 +51,7 @@
 				on:click={codeClick}
 				class="hint"
 				alt="Portfolio"
-				title="Portfolio">Click Here for Portfolio</span
+				title="Portfolio">Click Down Here for Portfolio</span
 			>
 		</div>
 	{/if}

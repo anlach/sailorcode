@@ -116,7 +116,7 @@
 		color: var(--timeline-color);
 		opacity: 0.7;
 		transition: opacity 0.3s;
-		margin: 10px;
+		margin: 5px;
 		cursor: pointer;
 		text-shadow: 0 -2px 15px rgba(51, 83, 134, 0.856);
 		z-index: 10;
@@ -140,10 +140,10 @@
 			font-size: 6svh;
 		}
 	}
-	@media (max-width: 400px) {
+	@media (max-width: 450px) {
 		span {
-			font-size: 6vh;
-			font-size: 6svh;
+			font-size: 10vw;
+			font-size: 10svw;
 		}
 	}
 	@media (hover: hover) {
