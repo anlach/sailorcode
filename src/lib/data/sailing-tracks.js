@@ -1,5 +1,4 @@
-export const data = {
-    "type": "FeatureCollection",
+{    "type": "FeatureCollection",
     "features": [
         {
             "type": "Feature",

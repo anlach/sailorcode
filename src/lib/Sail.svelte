@@ -4,59 +4,68 @@
 	import Story from '$lib/Story.svelte';
 	import Timeline from '$lib/Timeline.svelte';
 	import { timeIndex } from '$lib/stores.js';
-	import { data } from '$lib/data/sailing-tracks.js';
 	import stories from '$lib/stories.js';
+	import { onMount } from 'svelte';
 	export let shrink;
 	export let grow;
+
+	let storyStops = [];
+
+	// Lazy load the sailing gps data - it's over 1MB
+	onMount(async () => {
+		const res = await fetch('$lib/data/sailing-tracks.js');
+		data = await res.json();
+		const nCoords = data.features.reduce((previous, current) => {
+			return previous + current.geometry.coordinates.length;
+		}, 0);
+		let coords = new Array(nCoords);
+		let times = new Array(nCoords);
+		let i = 0;
+		for (const feature of data.features) {
+			let J = feature.geometry.coordinates.length;
+			for (let j = 0; j < J; j++) {
+				coords[i + j] = [
+					feature.geometry.coordinates[j][1],
+					feature.geometry.coordinates[j][0]
+				];
+				times[i + j] = new Date(feature.properties.coordTimes[j]);
+			}
+			i += J;
+		}
+
+		// Add some padding into the timeline for stories
+		i = 0;
+		const storyCoords = stories.map((s) => s.latLng);
+		for (let story of stories) {
+			while (story.date > times[i]) i++;
+			let coordIndex = i;
+			if (i > coords.length - 1) coordIndex = coords.length - 1;
+			// coords is used for the boat marker, so we just duplicate whatever
+			// already there instead of using the story location, which
+			// may not happen near the boat.
+			coords = [
+				...coords.slice(0, i),
+				...new Array(20).fill(coords[coordIndex]),
+				...coords.slice(i, coords.length)
+			];
+			times = [
+				...times.slice(0, i),
+				...new Array(20).fill(story.date),
+				...times.slice(i, times.length)
+			];
+			storyStops.push(20 + i - 1);
+		}
+	});
 
 	// stories are chronologically ordered
 	let storyIndex = 0;
 	let storyInView = stories[storyIndex];
 
-	const nCoords = data.features.reduce((previous, current) => {
-		return previous + current.geometry.coordinates.length;
-	}, 0);
-	let coords = new Array(nCoords);
-	let times = new Array(nCoords);
-	let i = 0;
-	for (const feature of data.features) {
-		let J = feature.geometry.coordinates.length;
-		for (let j = 0; j < J; j++) {
-			coords[i + j] = [
-				feature.geometry.coordinates[j][1],
-				feature.geometry.coordinates[j][0]
-			];
-			times[i + j] = new Date(feature.properties.coordTimes[j]);
-		}
-		i += J;
-	}
-
-	// Add some padding into the timeline for stories
-	i = 0;
-	let storyStops = [];
-	const storyCoords = stories.map((s) => s.latLng);
-	for (let story of stories) {
-		while (story.date > times[i]) i++;
-		let coordIndex = i;
-		if (i > coords.length - 1) coordIndex = coords.length - 1;
-		// coords is used for the boat marker, so we just duplicate whatever
-		// already there instead of using the story location, which
-		// may not happen near the boat.
-		coords = [
-			...coords.slice(0, i),
-			...new Array(20).fill(coords[coordIndex]),
-			...coords.slice(i, coords.length)
-		];
-		times = [
-			...times.slice(0, i),
-			...new Array(20).fill(story.date),
-			...times.slice(i, times.length)
-		];
-		storyStops.push(20 + i - 1);
-	}
 	timeIndex.set(0);
 
 	function getStopIndex(timeIndex) {
+		if (storyStops.length == 0) return 0;
+		
 		//  |---S--+--S---S---S|
 		let stopIndex = storyStops.length - 1;
 		while (timeIndex <= storyStops[stopIndex - 1]) stopIndex--;
