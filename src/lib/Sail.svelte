@@ -18,7 +18,7 @@
 	let mapIsReady = false;
 	// Lazy load the sailing gps data - it's over 1MB
 	onMount(async () => {
-		const res = await fetch('/data/sailing-tracks.json.gz');
+		const res = await fetch('/data/sailing-tracks.json');
 		data = await res.json();
 		const nCoords = data.features.reduce((previous, current) => {
 			return previous + current.geometry.coordinates.length;
