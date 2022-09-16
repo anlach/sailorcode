@@ -3,6 +3,7 @@
 	import Project from './Project.svelte';
 	import { blur, scale, fly } from 'svelte/transition';
 	import { cubicInOut } from 'svelte/easing';
+	import { onMount, onDestroy } from 'svelte';
 
 	export let shrink;
 	export let grow;
@@ -19,14 +20,44 @@
 			url: 'https://codepen.io/anlach/pen/BarKjKX'
 		},
 		{
-			title: 'Bootstrap Quote Generator',
-			image: '/img/RandomQuotes.png',
-			url: 'https://codepen.io/anlach/pen/eYMpGrO'
+			title: 'Exercise Tracker API',
+			image: '/img/Exercise%20Tracker%20freeCodeCamp.png',
+			url: 'https://boilerplate-project-exercisetracker.anlach.repl.co/'
 		},
 		{
 			title: 'React 25-5 Clock',
 			image: '/img/25-5-Clock.png',
 			url: 'https://codepen.io/anlach/pen/PoRzLeQ'
+		},
+		{
+			title: 'URL Shortener Microservice API',
+			image: '/img/URL%20Shortener%20Microservice%20freeCodeCamp.png',
+			url: 'https://project-urlshortener.anlach.repl.co/'
+		},
+		{
+			title: 'GCP-hosted Header Parser API',
+			image: '/img/Request%20Header%20Parser.png',
+			url: 'https://project-headerparser-mjcp36gvla-uw.a.run.app/'
+		},
+		{
+			title: 'Bootstrap Quote Generator',
+			image: '/img/RandomQuotes.png',
+			url: 'https://codepen.io/anlach/pen/eYMpGrO'
+		},
+		{
+			title: 'Timestamp Microservice API',
+			image: '/img/Timestamp%20Microservice%20freeCodeCamp.png',
+			url: 'https://boilerplate-project-timestamp.anlach.repl.co/'
+		},
+		{
+			title: 'React Drum Machine',
+			image: '/img/Drum_Machine.png',
+			url: 'https://codepen.io/anlach/pen/xxWZrRg?editors=1111'
+		},
+		{
+			title: 'File Metadata API',
+			image: '/img/File%20Metadata.png',
+			url: 'https://boilerplate-project-filemetadata.anlach.repl.co/'
 		}
 	];
 	const createProjects = new Array(projects.length)
@@ -89,10 +120,24 @@
 		}
 	};
 
-	function stopIfSwipe(e){
+	function stopIfSwipe(e) {
 		// This only seems to be a problem in FireFox
 		if (e.timeStamp == swipeTimeStamp) e.stopPropagation();
 	}
+	function handleArrow(e) {
+		if (grow) {
+			if (e.key == 'ArrowRight') {
+				if (iProj < projects.length - 1) iProj += 1;
+			} else if (e.key == 'ArrowLeft') {
+				if (iProj > 0) iProj -= 1;
+			} else if (e.key == 'Enter') {
+				window.open(projects[iProj].url, '_blank');
+			}
+		}
+	}
+	onMount( async () => {
+		document.addEventListener('keydown', handleArrow);
+	});
 </script>
 
 <div class="code" on:click={stopIfSwipe}>
@@ -187,7 +232,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		font-size: 3rem;
+		font-size: 8vh;
+		font-size: 8svh;
 	}
 	.links a {
 		color: var(--text-color);

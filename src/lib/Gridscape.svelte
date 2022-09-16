@@ -48,7 +48,7 @@
 		position: absolute;
 	}
 	.horizon-blur {
-		height: 15%;
+		height: 25%;
 		width: 100%;
 		position: absolute;
 		top: 45%;
@@ -56,9 +56,9 @@
 	}
 	.grid {
 		width: 100%;
-		height: 40%;
+		height: 30%;
 		position: absolute;
-		top: 60%;
+		top: 70%;
 		background-color: transparent;
 		overflow: hidden;
 	}

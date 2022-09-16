@@ -1,4 +1,5 @@
 <script>
+	import { fade } from 'svelte/transition';
 	import Sail from '$lib/Sail.svelte';
 	import Code from '$lib/Code.svelte';
 
@@ -104,6 +105,16 @@
 		on:click={clickIfNotSwipe(sailClick)}
 	>
 		<Sail grow={growSail} shrink={shrinkSail} />
+		{#if !(growSail || shrinkSail)}
+			<div class="hint-box" transition:fade={{ duration: 200 }}>
+				<span
+					on:click={sailClick}
+					class="hint"
+					alt="Adventure Page"
+					title="Adventure Page">Click Up Here for Adventure</span
+				>
+			</div>
+		{/if}
 	</div>
 	<div
 		id="code-box"
@@ -112,6 +123,16 @@
 		on:click={clickIfNotSwipe(codeClick)}
 	>
 		<Code grow={shrinkSail} shrink={growSail} />
+		{#if !(growSail || shrinkSail)}
+			<div class="hint-box" transition:fade={{ duration: 200 }}>
+				<span
+					on:click={codeClick}
+					class="hint"
+					alt="Portfolio"
+					title="Portfolio">Click Down Here for Portfolio</span
+				>
+			</div>
+		{/if}
 	</div>
 </div>
 
@@ -150,5 +171,34 @@
 		height: 90vh;
 		height: 90svh;
 		transition: height 0.5s;
+	}
+
+	.hint-box {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		position: absolute;
+		top: 0;
+	}
+	.hint {
+		font-size: 2rem;
+		text-align: center;
+		/* left: calc(50% - 2.5rem); */
+		color: white;
+		opacity: 0;
+		animation: hint 5s ease-in-out 1s infinite;
+	}
+	@keyframes hint {
+		from {
+			opacity: 0;
+		}
+		50% {
+			opacity: 0.1;
+		}
+		to {
+			opacity: 0;
+		}
 	}
 </style>

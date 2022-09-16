@@ -139,7 +139,13 @@
 		--text-color: rgb(148, 182, 255);
 		--dark-color: rgb(6, 0, 53);
 	}
-	@media screen and (min-device-width: 700px) {
+	@media (min-width: 700px) {
+		.sail {
+			background-size: 100vw 90vh;
+			background-size: 100vw 90svh;
+		}
+	}
+	@media (max-width: 700px) and (max-height: 520px) {
 		.sail {
 			background-size: 100vw 90vh;
 			background-size: 100vw 90svh;
@@ -172,7 +178,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		font-size: 3rem;
+		font-size: 8vh;
+		font-size: 8svh;
 	}
 	.links a {
 		color: var(--text-color);
@@ -180,7 +187,7 @@
 		margin: 5px 5px;
 	}
 	.pad {
-		padding: 0 2% 2% 2%;
+		padding: 0 2% 1% 2%;
 		height: 65vh;
 		height: 65svh;
 		width: 100vw;
