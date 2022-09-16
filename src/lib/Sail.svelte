@@ -9,17 +9,22 @@
 	export let shrink;
 	export let grow;
 
+	let coords = [];
+	let storyCoords = [];
+	let times = [];
 	let storyStops = [];
+	let data = {};
 
+	let mapIsReady = false;
 	// Lazy load the sailing gps data - it's over 1MB
 	onMount(async () => {
-		const res = await fetch('$lib/data/sailing-tracks.js');
+		const res = await fetch('/data/sailing-tracks.json');
 		data = await res.json();
 		const nCoords = data.features.reduce((previous, current) => {
 			return previous + current.geometry.coordinates.length;
 		}, 0);
-		let coords = new Array(nCoords);
-		let times = new Array(nCoords);
+		coords = new Array(nCoords);
+		times = new Array(nCoords);
 		let i = 0;
 		for (const feature of data.features) {
 			let J = feature.geometry.coordinates.length;
@@ -35,7 +40,7 @@
 
 		// Add some padding into the timeline for stories
 		i = 0;
-		const storyCoords = stories.map((s) => s.latLng);
+		storyCoords = stories.map((s) => s.latLng);
 		for (let story of stories) {
 			while (story.date > times[i]) i++;
 			let coordIndex = i;
@@ -55,6 +60,7 @@
 			];
 			storyStops.push(20 + i - 1);
 		}
+		mapIsReady = true;
 	});
 
 	// stories are chronologically ordered
@@ -65,7 +71,7 @@
 
 	function getStopIndex(timeIndex) {
 		if (storyStops.length == 0) return 0;
-		
+
 		//  |---S--+--S---S---S|
 		let stopIndex = storyStops.length - 1;
 		while (timeIndex <= storyStops[stopIndex - 1]) stopIndex--;
@@ -101,14 +107,16 @@
 		<div class="pad" in:fade={{ delay: 200 }} out:fade={{ duration: 100 }}>
 			<div class="split">
 				<div class="map-outer">
-					<Map
-						{coords}
-						{data}
-						{times}
-						{storyCoords}
-						{storyIndex}
-						{storyStops}
-					/>
+					{#if mapIsReady}
+						<Map
+							{coords}
+							{data}
+							{times}
+							{storyCoords}
+							{storyIndex}
+							{storyStops}
+						/>
+					{/if}
 				</div>
 				<div class="story-outer">
 					<Story {...storyInView} />
