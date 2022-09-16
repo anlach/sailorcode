@@ -17,7 +17,6 @@
 		}
 	}
 	function codeClick(e) {
-		console.log('click on code', e);
 		if (growSail) {
 			shrinkSail = true;
 			growSail = false;
