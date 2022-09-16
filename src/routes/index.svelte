@@ -29,29 +29,31 @@
 	}
 </script>
 
-<div id="sail-box" class:growSail class:shrinkSail on:click={sailClick}>
+<div
+	id="sail-box"
+	class:growSail
+	class:shrinkSail
+	on:click={sailClick}
+	alt="Adventure"
+>
 	<Sail grow={growSail} shrink={shrinkSail} />
 	{#if !(growSail || shrinkSail)}
-		<div class ="hint-box" transition:fade={{ duration: 200 }}>
-			<span
-				on:click={sailClick}
-				class="hint"
-				alt="Adventure Page"
-				title="Adventure Page">Click Up Here for Adventure</span
-			>
+		<div class="hint-box" transition:fade={{ duration: 200 }}>
+			<span class="hint">Click Up Here for Adventure</span>
 		</div>
 	{/if}
 </div>
-<div id="code-box" class:growSail class:shrinkSail on:click={codeClick}>
+<div
+	id="code-box"
+	class:growSail
+	class:shrinkSail
+	on:click={codeClick}
+	alt="Portfolio"
+>
 	<Code grow={shrinkSail} shrink={growSail} />
 	{#if !(growSail || shrinkSail)}
 		<div class="hint-box" transition:fade={{ duration: 200 }}>
-			<span
-				on:click={codeClick}
-				class="hint"
-				alt="Portfolio"
-				title="Portfolio">Click Down Here for Portfolio</span
-			>
+			<span class="hint">Click Down Here for Portfolio</span>
 		</div>
 	{/if}
 </div>
@@ -93,7 +95,7 @@
 		transition: height 0.5s;
 	}
 
-	.hint-box{
+	.hint-box {
 		height: 100%;
 		width: 100%;
 		display: flex;
@@ -105,17 +107,18 @@
 	.hint {
 		font-size: 2rem;
 		text-align: center;
+		cursor: default;
 		/* left: calc(50% - 2.5rem); */
 		color: white;
 		opacity: 0;
-		animation: hint 5s ease-in-out 1s infinite;
+		animation: hint 5s ease-in-out 0.5s infinite;
 	}
 	@keyframes hint {
 		from {
 			opacity: 0;
 		}
 		50% {
-			opacity: 0.1;
+			opacity: 0.2;
 		}
 		to {
 			opacity: 0;
