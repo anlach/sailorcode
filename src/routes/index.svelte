@@ -29,7 +29,6 @@
 	}
 </script>
 
-<!-- style:height={height} -->
 <div id="sail-box" class:growSail class:shrinkSail on:click={sailClick}>
 	<Sail grow={growSail} shrink={shrinkSail} />
 	{#if !(growSail || shrinkSail)}
