@@ -9,45 +9,68 @@
 	export let storyIndex;
 	export let storyStops;
 
-	let intTimeIndex = 0;
-	var boatIcon = L.icon({
-		iconUrl: '/favicon.png',
-		iconSize: [36, 36]
-	});
-	function getNewPosition(i) {
-		return L.latLng(coords[i][0], coords[i][1]);
-	}
-	const boat = L.marker(getNewPosition(parseInt($timeIndex)), { icon: boatIcon });
-	var map = null;
-	$: {
-		const pos = getNewPosition(parseInt($timeIndex));
-		boat.setLatLng(pos);
-		if (map != null) map.panTo(pos);
-	}
-	var stopMarkers = []
-	for (let i=0; i<storyStops.length; i++){
-		let marker = L.marker(storyCoords[i], {opacity: 0.5});
-		marker.on('click', ()=>timeIndex.set(storyStops[i]));
-		stopMarkers.push(marker);
-	}
-	$: stopMarkers.map((marker, i) =>
-		i == storyIndex ? marker.setOpacity(1.0) : marker.setOpacity(0.5)
-	);
+	let map = null;
+	let stopMarkers = [];
+	let boat = null;
+	let mapReady = false;
 
-	function loadMap() {
+	async function loadMap() {
+		const iconsCreated = createIcons();
 		map = L.map('map').setView([36.5, -75.0], 5);
 		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			maxZoom: 19,
 			attribution: '© OpenStreetMap'
 		}).addTo(map);
 		L.geoJSON(data).addTo(map);
-		L.control.scale({'position': 'topleft'}).addTo(map);
+		L.control.scale({ position: 'topleft' }).addTo(map);
+		await iconsCreated;
 		boat.addTo(map);
 		for (let stopMarker of stopMarkers) {
 			stopMarker.addTo(map);
 		}
+		mapReady = true;
 	}
-	onMount(loadMap);
+
+	async function loadLeaflet() {
+		var x = document.createElement('script');
+		x.src = 'https://unpkg.com/leaflet@1.8.0/dist/leaflet.js';
+		x.integrity =
+			'sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==';
+		x.crossOrigin = "";
+		x.onload = loadMap;
+		document.getElementsByTagName('head')[0].appendChild(x);
+	}
+	loadLeaflet();
+
+	function getNewPosition(i) {
+		return L.latLng(coords[i][0], coords[i][1]);
+	}
+
+	async function createIcons() {
+		var boatIcon = L.icon({
+			iconUrl: '/favicon.png',
+			iconSize: [36, 36]
+		});
+		boat = L.marker(getNewPosition(parseInt($timeIndex)), {
+			icon: boatIcon
+		});
+		for (let i = 0; i < storyStops.length; i++) {
+			let marker = L.marker(storyCoords[i], { opacity: 0.5 });
+			marker.on('click', () => timeIndex.set(storyStops[i]));
+			stopMarkers.push(marker);
+		}
+	}
+
+	$: {
+		if (mapReady) {
+			const pos = getNewPosition(parseInt($timeIndex));
+			boat.setLatLng(pos);
+		    if (map != null) map.panTo(pos);
+		}
+	}
+	$: stopMarkers.map((marker, i) =>
+		i == storyIndex ? marker.setOpacity(1.0) : marker.setOpacity(0.5)
+	);
 
 	function handleClick(event) {
 		event.stopPropagation();
