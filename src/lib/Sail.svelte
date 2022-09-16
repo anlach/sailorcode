@@ -10,7 +10,7 @@
 	export let grow;
 
 	// stories are chronologically ordered
-	let storyIndex = stories.length - 1;
+	let storyIndex = 0;
 	let storyInView = stories[storyIndex];
 
 	const nCoords = data.features.reduce((previous, current) => {
@@ -54,7 +54,7 @@
 		];
 		storyStops.push(20 + i - 1);
 	}
-	timeIndex.set(times.length - 1);
+	timeIndex.set(0);
 
 	function getStopIndex(timeIndex) {
 		//  |---S--+--S---S---S|
