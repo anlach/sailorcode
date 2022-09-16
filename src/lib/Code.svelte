@@ -150,9 +150,6 @@
 	</div>
 	<Gridscape />
 	{#if grow}
-		<script
-			async
-			src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 		<div class="project-outer">
 			<div
 				class="projects"
