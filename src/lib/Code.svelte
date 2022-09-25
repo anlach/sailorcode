@@ -15,6 +15,11 @@
 			url: 'https://www.freecodecamp.org/anlach'
 		},
 		{
+			title: 'AWS Serverless Secret Message API',
+			image: '/img/Secrets.png',
+			url: 'https://g3y6mpvv9a.execute-api.us-west-2.amazonaws.com'
+		},
+		{
 			title: 'React Calculator',
 			image: '/img/Calculator.png',
 			url: 'https://codepen.io/anlach/pen/BarKjKX'
