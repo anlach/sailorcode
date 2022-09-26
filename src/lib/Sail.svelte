@@ -3,6 +3,7 @@
 	import Map from '$lib/Map.svelte';
 	import Story from '$lib/Story.svelte';
 	import Timeline from '$lib/Timeline.svelte';
+	import SailLinks from '$lib/SailLinks.svelte';
 	import { timeIndex } from '$lib/stores.js';
 	import stories from '$lib/stories.js';
 	import { onMount } from 'svelte';
@@ -84,6 +85,7 @@
 
 <div class="sail">
 	<noscript>
+		<SailLinks noscript/>
 		<div class="noscript-stories">
 			{#each stories as story}
 			<span class="noscript-story">
@@ -93,27 +95,7 @@
 		</div>
 	</noscript>
 	{#if grow}
-		<div class="links" transition:blur>
-			<a
-				href="https://www.instagram.com/anlach"
-				target="_blank"
-				on:click={(e) => e.stopPropagation()}
-			>
-				<span
-					class="fa-brands fa-instagram"
-					alt="Instagram"
-					title="Instagram"
-				/>
-			</a>
-			<a
-				href="https://www.facebook.com/andrewpants/"
-				target="_blank"
-				on:click={(e) => e.stopPropagation()}
-			>
-				<span class="fa-brands fa-facebook" alt="Facebook" title="Facebook" />
-			</a>
-		</div>
-
+		<SailLinks />
 		<div class="pad" in:fade={{ delay: 200 }} out:fade={{ duration: 100 }}>
 			<div class="split">
 				<div class="map-outer">
@@ -187,23 +169,6 @@
 		text-shadow: 0 0 30px var(--dark-color);
 		z-index: 5;
 		position: relative;
-	}
-	.links {
-		/* position: absolute; */
-		top: 0;
-		left: 0;
-		right: 0;
-		z-index: 1;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-size: 8vh;
-		font-size: 8svh;
-	}
-	.links a {
-		color: var(--text-color);
-		text-shadow: 0 0 30px var(--dark-color);
-		margin: 5px 5px;
 	}
 	.pad {
 		padding: 0 2% 1% 2%;
