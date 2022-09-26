@@ -2,8 +2,10 @@
 	export let pos;
 	export let title;
 	export let image;
+	export let noscript = false;
 
 	function getTransform(position) {
+		if (noscript) return 'translateY(0)'
 		let rotation = '';
 		let translation1 = 'translateZ(50vw)';
 		let translation2 = '';
@@ -16,7 +18,6 @@
 			translation1 = `translateX(${50 + 20 * position}%) `;
 			translation2 = 'translateX(50%)';
 		}
-		// rotation = "";
 		return translation1 + rotation + translation2;
 	}
 </script>

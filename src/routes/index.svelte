@@ -28,6 +28,16 @@
 	}
 </script>
 
+<svelte:head>
+	<noscript>
+		<style>
+			.jsonly {
+				display: none;
+			}
+		</style>
+	</noscript>
+</svelte:head>
+
 <div
 	id="sail-box"
 	class:growSail
@@ -37,8 +47,10 @@
 >
 	<Sail grow={growSail} shrink={shrinkSail} />
 	{#if !(growSail || shrinkSail)}
-		<div class="hint-box" transition:fade={{ duration: 200 }}>
-			<span class="hint">Click Up Here for Adventure</span>
+		<div class="jsonly">
+			<div class="hint-box jsonly" transition:fade={{ duration: 200 }}>
+				<span class="hint">Click Up Here for Adventure</span>
+			</div>
 		</div>
 	{/if}
 </div>
@@ -51,8 +63,10 @@
 >
 	<Code grow={shrinkSail} shrink={growSail} />
 	{#if !(growSail || shrinkSail)}
-		<div class="hint-box" transition:fade={{ duration: 200 }}>
-			<span class="hint">Click Down Here for Portfolio</span>
+		<div class="jsonly">
+			<div class="hint-box" transition:fade={{ duration: 200 }}>
+				<span class="hint">Click Down Here for Portfolio</span>
+			</div>
 		</div>
 	{/if}
 </div>

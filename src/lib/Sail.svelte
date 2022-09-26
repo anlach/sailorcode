@@ -6,6 +6,7 @@
 	import { timeIndex } from '$lib/stores.js';
 	import stories from '$lib/stories.js';
 	import { onMount } from 'svelte';
+	import Code from './Code.svelte';
 	export let shrink;
 	export let grow;
 
@@ -82,6 +83,15 @@
 </script>
 
 <div class="sail">
+	<noscript>
+		<div class="noscript-stories">
+			{#each stories as story}
+			<span class="noscript-story">
+				<Story {...story}></Story>
+			</span>
+			{/each}
+		</div>
+	</noscript>
 	{#if grow}
 		<div class="links" transition:blur>
 			<a
@@ -126,7 +136,7 @@
 		<Timeline max={times.length - 1} stops={storyStops} {storyIndex} />
 	{/if}
 	<div class:shrink class:grow class="textbox">
-		<h1>SAIL</h1>
+		<h1 class="jsonly">SAIL</h1>
 	</div>
 </div>
 
@@ -214,5 +224,20 @@
 	.map-outer {
 		flex-grow: 1;
 		min-width: 112px;
+	}
+	.noscript-stories {
+		width: 100%;
+		/* left: 30%; */
+		height: 100%;
+		overflow: scroll;
+		display: flex;
+		/* position: absolute; */
+		/* justify-content: center; */
+		/* margin: auto; */
+	}
+	.noscript-story {
+		/* width: 100%; */
+		min-width: 500px;
+		height: 100%;
 	}
 </style>

@@ -143,7 +143,7 @@
 			}
 		}
 	}
-	onMount( async () => {
+	onMount(async () => {
 		document.addEventListener('keydown', handleArrow);
 	});
 </script>
@@ -154,6 +154,22 @@
 		<h1>CODE</h1>
 	</div>
 	<Gridscape />
+	<noscript>
+		<div class="noscript-projects">
+			{#each projects as proj}
+				<div class="noscript-project">
+					<a href={proj.url} target="_blank">
+						<Project
+							noscript={true}
+							pos=0
+							title={proj.title}
+							image={proj.image}
+						/>
+					</a>
+				</div>
+			{/each}
+		</div>
+	</noscript>
 	{#if grow}
 		<div class="project-outer">
 			<div
@@ -275,5 +291,19 @@
 		transform-style: preserve-3d;
 		margin: auto;
 		z-index: 0;
+	}
+	.noscript-projects {
+		overflow: scroll;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+	.noscript-project {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+	.noscript-project a {
+		height: 120%;
 	}
 </style>
