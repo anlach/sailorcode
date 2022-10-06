@@ -6,6 +6,33 @@
             "properties": {
                 "name": "Andrew LaCharite (9136360)",
                 "desc": "Andrew LaCharite (9136360)",
+                "time": "2018-05-01T01:25:30Z",
+                "coordTimes": [
+                    "2018-05-01T01:25:30Z",
+                    "2018-05-01T01:25:30Z"
+                ]
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -76.60529786208637,
+                        39.26510928332124,
+                        0.0
+                    ],
+                    [
+                        -76.60529786208637,
+                        39.26510928332124,
+                        0.0
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Andrew LaCharite (9136360)",
+                "desc": "Andrew LaCharite (9136360)",
                 "time": "2020-08-11T01:25:30Z",
                 "coordTimes": [
                     "2020-08-11T01:25:30Z",

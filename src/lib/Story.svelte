@@ -41,7 +41,7 @@
 			</div>
 		</div>
 	{/if}
-	<div class="text">
+	<div class="text" on:click|stopPropagation>
 		<h2>{title}</h2>
 		<p>{text}</p>
 		<div class="break" />

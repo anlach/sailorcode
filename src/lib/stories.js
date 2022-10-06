@@ -47,6 +47,29 @@ export default [
                a Dwarf Fortress reference."
     },
     {
+        title: "Buying Somerledi",
+        latLng: [39.26510928332124, -76.60529786208637],
+        date: new Date("2018-04-15T00:00:00Z"),
+        photos: [
+            "/img/stories/buy-1.jpg",
+            "/img/stories/buy-2.jpg",
+            "/img/stories/buy-3.jpg",
+        ],
+        alt: [
+            "First look at Somerledi",
+            "front of Shannon 28",
+            "Shannon 28 rudder"
+        ],
+        video: null,
+        text: "I bought Somerledi in Baltimore. I made an initial trip \
+            down from Albany to see her, and then it just felt like there was \
+            no going back. \
+            After the offer got accepted, I made another trip for an inspection \
+            and sea trials. I never actually met the owner - just the broker. \
+            Later, though, I did contact the owner to get some more information \
+            about the boat."
+    },
+    {
         title: "Sailing Urist",
         latLng: [43.268957570495544, -74.05304187024247],
         date: new Date("2020-07-01T00:00:00Z"),
