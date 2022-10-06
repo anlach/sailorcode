@@ -70,6 +70,46 @@ export default [
             about the boat."
     },
     {
+        title: "Baltimore to Ocean City, NJ",
+        latLng: [39.31242053234802, -74.53628618087045],
+        date: new Date("2018-05-28T00:00:00Z"),
+        photos: [
+            "/img/stories/md-1.jpg",
+            "/img/stories/md-2.jpg",
+            "/img/stories/md-3.jpg",
+            "/img/stories/md-4.jpg",
+            "/img/stories/md-5.jpg",
+            "/img/stories/md-6.jpg",
+            "/img/stories/md-7.jpg",
+        ],
+        alt: [],
+        video: null,
+        text: ""
+    },
+    {
+        title: "New York",
+        latLng: [40.706795670163, -73.99326891951878],
+        date: new Date("2018-06-01T00:00:00Z"),
+        photos: [
+            "1",
+        ],
+        alt: [
+            "",
+        ],
+        video: null,
+        text: "After our first time getting towed, we thought the problem with \
+               the engine was fixed."
+    },
+    {
+        title: "Old Lyme, CT",
+        latLng: [41.32937590038817, -72.342630992986],
+        date: new Date("2018-06-02T00:00:00Z"),
+        photos: [],
+        alt: [],
+        video: null,
+        text: ""
+    },
+    {
         title: "Sailing Urist",
         latLng: [43.268957570495544, -74.05304187024247],
         date: new Date("2020-07-01T00:00:00Z"),
