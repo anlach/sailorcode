@@ -50,9 +50,12 @@
 			// coords is used for the boat marker, so we just duplicate whatever
 			// already there instead of using the story location, which
 			// may not happen near the boat.
+			console.log("addBoatCoords", story["addBoatCoords"], coordIndex);
 			coords = [
 				...coords.slice(0, i),
-				...new Array(20).fill(coords[coordIndex]),
+				...((story["addBoatCoords"] && story.addBoatCoords == true) ?
+				    Array(20).fill(story.latLng) :
+				    Array(20).fill(coords[coordIndex])),
 				...coords.slice(i, coords.length)
 			];
 			times = [
