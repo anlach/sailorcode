@@ -107,7 +107,7 @@ export default [
                itself down for scary 10 seconds while we pulled the kill \
                switch. Inexperience with the boat, the waves and wind against us, \
                and the loss of the engine for use in coming through the tricky \
-               NJ inlets led me to decide to use my TowBoat US membership and we \
+               NJ inlets led me to decide to use my TowBoat US membership. We \
                got towed into Ocean City to have the engine checked. The next \
                day it was time for Craig to head back up to work in New York."
     },
@@ -177,6 +177,7 @@ export default [
     {
         title: "Old Lyme, CT",
         latLng: [41.32937590038817, -72.342630992986],
+        addBoatCoords: true,
         date: new Date("2018-06-02T00:00:00Z"),
         photos: [
             "/img/stories/li-sound-1.jpg",
