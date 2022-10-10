@@ -49,6 +49,7 @@ export default [
     {
         title: "Buying Somerledi",
         latLng: [39.26510928332124, -76.60529786208637],
+        addBoatCoords: true,
         date: new Date("2018-04-15T00:00:00Z"),
         photos: [
             "/img/stories/buy-1.jpg",
@@ -72,6 +73,7 @@ export default [
     {
         title: "Baltimore to Ocean City, NJ",
         latLng: [39.31242053234802, -74.53628618087045],
+        addBoatCoords: true,
         date: new Date("2018-05-28T00:00:00Z"),
         photos: [
             "/img/stories/md-1.jpg",
@@ -82,30 +84,73 @@ export default [
             "/img/stories/md-6.jpg",
             "/img/stories/md-7.jpg",
         ],
-        alt: [],
+        alt: [
+            "Somerledi in the water",
+            "Dad arrives",
+            "Chesapeake Delaware Canal",
+            "Craig and Dad preparing food",
+            "Bad halyard tension",
+            "Dad steering",
+            "Leaving Cape May"
+        ],
         video: null,
         text: ""
     },
     {
-        title: "New York",
-        latLng: [40.706795670163, -73.99326891951878],
-        date: new Date("2018-06-01T00:00:00Z"),
+        title: "Forked River, NJ",
+        latLng: [39.83317657078028, -74.19097608844571],
+        addBoatCoords: true,
+        date: new Date("2018-05-30T00:00:00Z"),
         photos: [
-            "1",
+            "/img/stories/forked-river-1.jpg",
+            "/img/stories/forked-river-2.jpg",
+            "/img/stories/forked-river-3.jpg"
         ],
         alt: [
-            "",
+            "Giant wake",
+            "Sleeping on the bridge deck",
+            "Cooking"
         ],
         video: null,
         text: "After our first time getting towed, we thought the problem with \
                the engine was fixed."
     },
     {
+        title: "New York Fog",
+        latLng: [40.706795670163, -73.99326891951878],
+        addBoatCoords: true,
+        date: new Date("2018-06-01T00:00:00Z"),
+        photos: [
+            "/img/stories/ny-fog-1.jpg",
+            "/img/stories/ny-fog-2.jpg",
+            "/img/stories/ny-fog-3.jpg",
+            "/img/stories/ny-fog-4.jpg",
+            "/img/stories/ny-fog-5.jpg"
+        ],
+        alt: [
+            "Cruise ship in the fog",
+            "Sails in the fog",
+            "City in fog",
+            "Brooklyn Bridge Selfie",
+            "Bridge in the fog"
+        ],
+        video: null,
+        text: ""
+    },
+    {
         title: "Old Lyme, CT",
         latLng: [41.32937590038817, -72.342630992986],
         date: new Date("2018-06-02T00:00:00Z"),
-        photos: [],
-        alt: [],
+        photos: [
+            "/img/stories/li-sound-1.jpg",
+            "/img/stories/li-sound-2.jpg",
+            "/img/stories/li-sound-3.jpg"
+        ],
+        alt: [
+            "Rain ahead",
+            "Raining",
+            "Old Saybrook"
+        ],
         video: null,
         text: ""
     },
