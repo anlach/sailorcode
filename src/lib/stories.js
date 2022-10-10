@@ -94,7 +94,22 @@ export default [
             "Leaving Cape May"
         ],
         video: null,
-        text: ""
+        text: "My Dad and my friend Craig came to Baltimore to help \
+               move the boat north. I had rented a big SUV that I used \
+               to drive the dinghy down with, although we never actually \
+               unshipped it the whole trip. \n\n \
+               The first few days went okay - up the Chesapeake, through \
+               the canal (stopping overnight), and then down the Delaware \
+               to Cape May. However, the weather started to turn against us \
+               on our first attempt to make progress in the Atlantic, and \
+               while we were motoring the engine suddenly started running \
+               louder and at a much higher frequency, and wouldn't shut \
+               itself down for scary 10 seconds while we pulled the kill \
+               switch. Inexperience with the boat, the waves and wind against us, \
+               and the loss of the engine for use in coming through the tricky \
+               NJ inlets led me to decide to use my TowBoat US membership and we \
+               got towed into Ocean City to have the engine checked. The next \
+               day it was time for Craig to head back up to work in New York."
     },
     {
         title: "Forked River, NJ",
@@ -102,8 +117,8 @@ export default [
         addBoatCoords: true,
         date: new Date("2018-05-30T00:00:00Z"),
         photos: [
-            "/img/stories/forked-river-1.jpg",
             "/img/stories/forked-river-2.jpg",
+            "/img/stories/forked-river-1.jpg",
             "/img/stories/forked-river-3.jpg"
         ],
         alt: [
@@ -113,7 +128,16 @@ export default [
         ],
         video: null,
         text: "After our first time getting towed, we thought the problem with \
-               the engine was fixed."
+               the engine was fixed. But then it failed for the second time off the \
+               Jersey coast. At this point I was almost starting to regret the whole \
+               endeavor. We sailed up close to the Barnegat Inlet and got towed \
+               again (with WAY too much horsepower - it turns out displacement boats \
+               can throw a decent wake if you drag them hard enough) - this time to a \
+               Yanmar dealer. With all the information \
+               from the last stop and the expertise of the place we stopped, we \
+               actually got the engine fixed this time. It had been a bad diaphram \
+               in the fuel pump and fuel was getting into the oil. We were able to \
+               get some rest while waiting for repairs."
     },
     {
         title: "New York Fog",
@@ -135,7 +159,20 @@ export default [
             "Bridge in the fog"
         ],
         video: null,
-        text: ""
+        text: "Can you see the cruise ship in the fog? \n \
+               We were on a pretty tight schedule at this poing \
+               with all the delays we had had. \
+               When the fog rolled in as we were approaching New York, we \
+               didn't have much of a choice but to press on until we could \
+               anchor in Gravesend Bay. We could hear the deep fog horn of a \
+               big ship approaching as we crossed Ambrose channel. After we \
+               got mostly across the channel, we could \
+               see the outline of this cruise ship moving fast across our \
+               tracks. Add it to the growing list of things I would do \
+               differently today. \n \
+               The next day we had low clouds obscuring New York City, but \
+               we timed the current well to make it up the East River into \
+               the Long Island Sound."
     },
     {
         title: "Old Lyme, CT",
@@ -152,7 +189,16 @@ export default [
             "Old Saybrook"
         ],
         video: null,
-        text: ""
+        text: "The engine had been running really well, and I kept \
+               turning it off to check the oil as we went. If only \
+               I'd have thought to check the fuel in the tank! I have \
+               since discovered that due to the shape of my fuel tank, \
+               it runs out pretty quickly once you get down past 1/4 tank. \
+               Anyway, we ran out of fuel. We tried to sail east, but \
+               there wasn't any wind. One final call to TowBoat US... \
+               this one was the most embarrassing. After we fueled up, \
+               I bled the air out of the secondary fuel filter, and the \
+               engine got us the rest of the way to Old Lyme."
     },
     {
         title: "Sailing Urist",
