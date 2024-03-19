@@ -53,3 +53,11 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+## Data
+
+The GPS data was retrieved from the Garmin explore website from the map page. The GPX data was used to convert to GeoJSON using the `@mapbox/togejson` npm package.
+
+```
+togeojson explore.gpx > mapdata.json
+```
