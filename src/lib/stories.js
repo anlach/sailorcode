@@ -396,4 +396,204 @@ export default [
         I had to camp nearby while I got the boat ready, because they only \
         allowed people to be in the storage areas while they were open."
     },
+    {
+        title: "Bahamas bound!",
+        latLng: [29.982625, -81.64968],
+        date: new Date("2023-12-06T00:00:00Z"),
+        photos: ["/img/stories/launch/launch-1.jpg",
+            "/img/stories/launch/launch-2.jpg",
+            "/img/stories/launch/launch-3.jpg",
+            "/img/stories/launch/launch-4.jpg"],
+        alt: ["in the straps", "provisions", "painting", "on the dock"],
+        video: null,
+        text: "Two summers passed, and then, in December 2023, I set out to prep the \
+        boat and get it to the Bahamas."
+    },
+    {
+        title: "St. John's River",
+        latLng: [30.397861, -81.507503 ],
+        date: new Date("2023-12-08T00:00:00Z"),
+        photos: ["/img/stories/jax-out/jax-out-1.jpg",
+            "/img/stories/jax-out/jax-out-2.jpg",
+            "/img/stories/jax-out/jax-out-3.jpg"],
+        alt: ["sunrise", "batman", "st. augustine"],
+        video: null,
+        text: "I made it to St. Augustine to meet my dad in two days of motoring."
+    },
+    {
+        title: "South in the Intracoastal Waterway",
+        latLng: [27.851757, -80.477226 ],
+        date: new Date("2023-12-12T18:00:00Z"),
+        photos: ["/img/stories/south/south-1.jpg",
+            "/img/stories/south/south-2.jpg",
+            "/img/stories/south/south-3.jpg",
+            "/img/stories/south/south-4.jpg"],
+        alt: ["staysail", "fancy houses", "sushi", "kayak"],
+        video: null,
+        text: "We sailed and motored south in the ICW, passing fancy houses along the way. \
+        The weather for the crossing was not looking great, so we had to wait a few days in \
+        West Palm Beach. It gave me a chance to put together the new kayak and for my dad \
+        to try some sushi."
+    },
+    {
+        title: "Crossing the Gulf Stream",
+        latLng: [26.860166, -79.360450 ],
+        date: new Date("2023-12-18T16:00:00Z"),
+        photos: ["/img/stories/crossing/crossing-0.jpg",
+            "/img/stories/crossing/crossing-1.jpg",
+            "/img/stories/crossing/crossing-3.jpg",
+            "/img/stories/crossing/crossing-4.jpg"],
+        alt: ["dad steering", "nassau", "freeport", "stern"],
+        video: null,
+        text: "The window for crossing was narrow, but we were mostly okay with wind \
+        out of the southwest. We checked in at the Grand Bahama Yacht Club in Port Lucaya, \
+        and then made our way on a second overnight to the Berry Islands, where we got some \
+        rest before the rough, final passage to Nassau."
+    },
+    {
+        title: "Junkanoo",
+        latLng: [25.080403, -77.351431 ],
+        date: new Date("2023-12-26T00:00:00Z"),
+        photos: [],
+        alt: [],
+        video: "HGpe8ZbD-9Y",
+        text: "On Boxing Day, the day after Christmas, there is an \
+        all-night parade in Nassau called Junkanoo. I slept for about 13 \
+        hours the following night."
+    },
+    {
+        title: "New Years",
+        latLng: [25.541039, -76.756135 ],
+        date: new Date("2024-01-01T00:00:00Z"),
+        photos: ["/img/stories/nye/nye-1.jpg",
+            "/img/stories/nye/nye-2.jpg",
+            "/img/stories/nye/nye-3.jpg",
+            "/img/stories/nye/nye-4.jpg"],
+        alt: ["christmas lights", "golf cart ride", "beach", "stage"],
+        video: null,
+        text: "My friend Maggie came for some sailing experience, and we went to \
+        Spanish Wells for New Years. Maggie made some friends that took us to see the sights."
+    },
+    {
+        title: "Royal Island Harbor",
+        latLng: [25.515350, -76.843828 ],
+        date: new Date("2024-01-03T00:00:00Z"),
+        photos: ["/img/stories/royal/royal-1.jpg",
+            "/img/stories/royal/royal-2.jpg",
+            "/img/stories/royal/royal-3.jpg",
+            "/img/stories/royal/IMG-20240103-WA0002.jpg",
+            "/img/stories/royal/IMG-20240103-WA0000.jpg",
+            "/img/stories/royal/IMG-20240103-WA0001.jpg"],
+        alt: ["up the mast", "at the top", "snacks", "story1", "story2", "story3"],
+        video: null,
+        text: "On our way back we stopped for a few days in Royal Island, and I was \
+        able to install a new dyneema topping lift. We also did some snorkeling - see \
+        the pictures for Maggie's description."
+    },
+    {
+        title: "Docking in Too Much Current",
+        latLng: [25.077717, -77.328735 ],
+        date: new Date("2024-01-05T20:00:00Z"),
+        photos: ["/img/stories/bent-bow/bent-1.jpg",
+            "/img/stories/bent-bow/bent-2.jpg"],
+        alt: ["bent roller", "snatch block"],
+        video: null,
+        text: "Long story short - the secondary bow roller got a little bent up. This \
+        was very stressful for me, but it's okay. Current can be tricky."
+    },
+    {
+        title: "Morgan Arrives!",
+        latLng: [25.550125004201462, -76.77249554693205],
+        date: new Date("2024-01-14T00:00:00Z"),
+        photos: ["/img/stories/morgan/morgan-1.jpg",
+            "/img/stories/morgan/morgan-2.jpg"],
+        alt: ["swing", "beach"],
+        video: null,
+        text: "It was all fun and games when Morgan and her friend arrived until Morgan \
+        got stung by a stingray. It was just behind that swing. We learned to shuffle our \
+        feet when walking through shallow water."
+    },
+    {
+        title: "Hatchett Bay",
+        latLng: [25.350704656227276, -76.49231889858079],
+        date: new Date("2024-01-17T00:00:00Z"),
+        photos: ["/img/stories/hatchett/hatchett.jpg"],
+        alt: ["narrow entrance"],
+        video: null,
+        text: "We had good sailing to Hatchett Bay and also on the next leg. The bay is super \
+        well protected with a narrow cut as an entrance."
+    },
+    {
+        title: "Pineapple Keys",
+        latLng: [25.149927, -76.194557 ],
+        date: new Date("2024-01-17T21:00:00Z"),
+        photos: ["/img/stories/pineapple/pineapple-1.jpg",
+            "/img/stories/pineapple/pineapple-2.jpg"],
+        alt: ["dinghy", "beach"],
+        video: null,
+        text: "This was a truly beautiful anchorage, and what made it even better is that \
+        we were able to walk to the best pizza place on Eleuthera and leave the dinghy on the \
+        beach."
+    },
+    {
+        title: "Rock Island Sound",
+        latLng: [24.862501, -76.163291 ],
+        date: new Date("2024-01-22T00:00:00Z"),
+        photos: ["/img/stories/caves/caves-10.jpg",
+            "/img/stories/caves/caves-20.jpg",
+            "/img/stories/caves/caves-30.jpg",
+            "/img/stories/caves/caves-3.jpg",
+            "/img/stories/caves/caves-4.jpg",
+            "/img/stories/caves/caves-6.jpg"],
+        alt: ["caves 1", "morgan by sign", "caves 2", "caves 3", "caves 4", "caves 5"],
+        video: null,
+        text: "We explored some really cool caves while staying for a few days on land at \
+        Rock Island Sound."
+    },
+    {
+        title: "Man-of-War Cay",
+        latLng: [26.594587, -77.007202 ],
+        date: new Date("2024-02-05T00:00:00Z"),
+        photos: ["/img/stories/mow/mow-1.jpg",
+            "/img/stories/mow/mow-2.jpg",
+            "/img/stories/mow/mow-3.jpg",
+            "/img/stories/mow/mow-4.jpg",
+            "/img/stories/mow/mow-5.jpg",
+            "/img/stories/mow/mow-6.jpg"],
+        alt: ["narrow spot", "phone booth", "tree", "menu", "beach", "view"],
+        video: null,
+        text: "We made it up to MOW in the Abacos to meet my aunts. We left a little \
+        early because there was a good weather window to sail all the way back to \
+        Jacksonville."
+    },
+    {
+        title: "Return to the USA",
+        latLng: [28.836128, -79.883071 ],
+        date: new Date("2024-02-11T18:20:00Z"),
+        photos: ["/img/stories/return/return-1.jpg",
+            "/img/stories/return/return-2.jpg",
+            "/img/stories/return/return-3.jpg",
+            "/img/stories/return/return-4.jpg",
+            "/img/stories/return/return-5.jpg",
+            "/img/stories/return/return-6.jpg"],
+        alt: ["sunset", "shipping", "lee cloths" , "galley", "flying fish", "heeled over"],
+        video: null,
+        text: "The way back was pretty smooth except for when the wind turned against me the \
+        last day. I was worried it would take another day, but luckily made it into the St. \
+        John's river inlet while the tide was still favorable."
+    },
+    {
+        title: "Green Cove Springs Again",
+        latLng: [29.982919, -81.648483],
+        date: new Date("2024-02-20T00:00:00Z"),
+        photos: ["/img/stories/haul2/haul2-0.jpg",
+            "/img/stories/haul2/haul2-1.jpg",
+            "/img/stories/haul2/haul2-2.jpg"],
+        alt: ["stove", "hauled", "covered"],
+        video: null,
+        text: "We had some cold days to use the wood stove one last time while we were \
+        waiting to get hauled out. With the Bahamas trip done, I had decided to try and \
+        sell the boat. We got the boat as ready for sale as possible and left it with the\
+        cover on it."
+    },
 ]
